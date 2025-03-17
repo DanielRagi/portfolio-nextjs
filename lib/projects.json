@@ -3,24 +3,28 @@
     "name": "Portafolio Personal",
     "link": "https://miportafolio.com",
     "desc": "Mi sitio web personal donde muestro mis proyectos y habilidades.",
-    "tags": ["React", "Next.js", "TypeScript"]
+    "tags": ["React", "Next.js", "TypeScript"],
+    "image": "/projects/project1.webp"
   },
   {
     "name": "API de Clima",
     "link": "https://github.com/usuario/api-clima",
     "desc": "Un servicio REST para obtener información del clima en tiempo real.",
-    "tags": ["Node.js", "Express", "MongoDB"]
+    "tags": ["Node.js", "Express", "MongoDB"],
+    "image": "/projects/project1.webp"
   },
   {
     "name": "Portafolio Personal",
     "link": "https://miportafolio.com",
     "desc": "Mi sitio web personal donde muestro mis proyectos y habilidades.",
-    "tags": ["React", "Next.js", "TypeScript"]
+    "tags": ["React", "Next.js", "TypeScript"],
+    "image": "/projects/project1.webp"
   },
   {
     "name": "API de Clima",
     "link": "https://github.com/usuario/api-clima",
     "desc": "Un servicio REST para obtener información del clima en tiempo real.",
-    "tags": ["Node.js", "Express", "MongoDB"]
+    "tags": ["Node.js", "Express", "MongoDB"],
+    "image": "/projects/project1.webp"
   }
 ]

@@ -8,6 +8,7 @@ interface Project {
   link: string;
   desc: string;
   tags: string[];
+  image: string;
 }
 
 export default function Home() {
@@ -82,11 +83,16 @@ export default function Home() {
   )
 }
 
-function ProjectCard({ name, link, desc, tags }: Project) {
+function ProjectCard({ name, link, desc, tags, image }: Project) {
   return (
     <div className="bg-[#1e1e1e] border border-[#484747] rounded-lg overflow-hidden">
       <div className="relative h-48">
-          <div className="bg-[#d9d9d9] h-full"></div>
+        <Image
+            src={image}
+            alt={name}
+            layout="fill"
+            objectFit="cover"
+        />
       </div>
       <div className="p-4">
         <div className="flex justify-between items-center mb-2">
