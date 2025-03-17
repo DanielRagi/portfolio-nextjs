@@ -27,14 +27,24 @@ export default function Hero() {
           innovadoras. Actualmente programando en Universitas XXI.
         </p>
         <div className="flex space-x-4">
-          <Link href="https://www.linkedin.com/in/danielramg/" className="hover:text-[#ffda44] transition-colors">
-            <Linkedin size={24} />
-            <span className="sr-only">LinkedIn</span>
-          </Link>
-          <Link href="https://github.com/DanielRagi" className="hover:text-[#ffda44] transition-colors">
+        <a
+          href="https://www.linkedin.com/in/danielramg/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-[#ffda44] transition-colors"
+        >
+          <Linkedin size={24} />
+          <span className="sr-only">LinkedIn</span>
+        </a>
+          <a
+            href="https://github.com/DanielRagi"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[#ffda44] transition-colors"
+          >
             <Github size={24} />
             <span className="sr-only">GitHub</span>
-          </Link>
+          </a>
         </div>
       </AnimatedSection>
       <AnimatedSection className="md:w-1/3" delay={0.3}>

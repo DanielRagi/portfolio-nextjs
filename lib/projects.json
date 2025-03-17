@@ -1,30 +1,23 @@
 [
   {
-    "name": "Portafolio Personal",
-    "link": "https://miportafolio.com",
-    "desc": "Mi sitio web personal donde muestro mis proyectos y habilidades.",
-    "tags": ["React", "Next.js", "TypeScript"],
+    "name": "Cognitive Videogame",
+    "link": "#",
+    "desc": "Videojuego para la estimulación cognitiva de personas con enfermedad de Alzheimer.",
+    "tags": ["Unity", "C#"],
     "image": "/projects/project1.webp"
   },
   {
-    "name": "API de Clima",
-    "link": "https://github.com/usuario/api-clima",
-    "desc": "Un servicio REST para obtener información del clima en tiempo real.",
-    "tags": ["Node.js", "Express", "MongoDB"],
-    "image": "/projects/project1.webp"
+    "name": "Dushi: Web App",
+    "link": "https://dushialimentos.co",
+    "desc": "E-commerce, administración e intranet a medida para empresa de alimentos saludables.",
+    "tags": ["Node.js", "MongoDB", "EJS"],
+    "image": "/projects/project2.webp"
   },
   {
-    "name": "E-commerce",
-    "link": "https://github.com/usuario/ecommerce",
-    "desc": "Una tienda online con carrito de compras y pasarela de pago.",
-    "tags": ["React", "Redux", "Stripe"],
-    "image": "/projects/project1.webp"
-  },
-  {
-    "name": "Blog Personal",
-    "link": "https://miblog.com",
-    "desc": "Un blog donde comparto mis ideas y experiencias sobre programación.",
-    "tags": ["Next.js", "Markdown", "Vercel"],
-    "image": "/projects/project1.webp"
+    "name": "Pronto...",
+    "link": "",
+    "desc": "",
+    "tags": [],
+    "image": "/projects/project_placeholder.webp"
   }
 ]
