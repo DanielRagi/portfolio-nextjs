@@ -1,9 +1,10 @@
-import type { Metadata } from 'next'
-import './globals.css'
+import type React from "react"
+import type { Metadata } from "next"
+import "./globals.css"
 
 export const metadata: Metadata = {
-  title: 'Daniel Ramirez - Portfolio',
-  description: 'Portfolio'
+  title: "Daniel Ramirez - Portfolio",
+  description: "Portfolio",
 }
 
 export default function RootLayout({
@@ -12,8 +13,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body>{children}</body>
     </html>
   )
 }
+

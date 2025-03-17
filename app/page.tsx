@@ -1,7 +1,8 @@
-import Header from "@/components/header";
-import Hero from "@/components/hero";
-import Projects from "@/components/projects";
-import Footer from "@/components/footer";
+import Header from "@/components/header"
+import Hero from "@/components/hero"
+import Projects from "@/components/projects"
+import Footer from "@/components/footer"
+import ScrollIndicator from "@/components/scroll-indicator"
 
 export default function Home() {
   return (
@@ -10,6 +11,8 @@ export default function Home() {
       <Hero />
       <Projects />
       <Footer />
+      <ScrollIndicator />
     </div>
-  );
+  )
 }
+
