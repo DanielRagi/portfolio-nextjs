@@ -1,6 +1,14 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Github, Linkedin } from "lucide-react"
+import projects from "@/lib/projects.json";
+
+interface Project {
+  name: string;
+  link: string;
+  desc: string;
+  tags: string[];
+}
 
 export default function Home() {
   return (
@@ -60,8 +68,8 @@ export default function Home() {
       <section id="proyectos" className="container mx-auto px-4 py-16">
         <h2 className="text-3xl font-bold mb-10">Proyectos</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[...Array(6)].map((_, index) => (
-            <ProjectCard key={index} />
+          {projects.map((project, index) => (
+            <ProjectCard key={index} {...project} />
           ))}
         </div>
       </section>
@@ -74,7 +82,7 @@ export default function Home() {
   )
 }
 
-function ProjectCard() {
+function ProjectCard({ name, link, desc, tags }: Project) {
   return (
     <div className="bg-[#1e1e1e] border border-[#484747] rounded-lg overflow-hidden">
       <div className="relative h-48">
@@ -82,21 +90,23 @@ function ProjectCard() {
       </div>
       <div className="p-4">
         <div className="flex justify-between items-center mb-2">
-          <h3 className="text-xl font-semibold">Lorem Ipsum</h3>
+          <h3 className="text-xl font-semibold">{name}</h3>
           <Link
-            href="#"
+            href={link}
             className="px-3 py-1 border border-[#8a8a8a] text-sm rounded hover:bg-[#484747] transition-colors"
           >
             Visitar
           </Link>
         </div>
         <p className="text-[#8a8a8a] text-sm mb-4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a auctor odio, ac volutpat enim.
+          {desc}
         </p>
         <div className="flex flex-wrap gap-2">
-          <span className="px-2 py-1 bg-[#484747] text-xs rounded text-[#d9d9d9]">JavaScript</span>
-          <span className="px-2 py-1 bg-[#484747] text-xs rounded text-[#d9d9d9]">Node.js</span>
-          <span className="px-2 py-1 bg-[#484747] text-xs rounded text-[#d9d9d9]">Django</span>
+          {tags.map((tag, index) => (
+            <span key={index} className="px-2 py-1 bg-[#484747] text-xs rounded text-[#d9d9d9]">
+              {tag}
+            </span>
+          ))}
         </div>
       </div>
     </div>
