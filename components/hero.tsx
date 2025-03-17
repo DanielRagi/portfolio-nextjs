@@ -48,15 +48,15 @@ export default function Hero() {
         </div>
       </AnimatedSection>
       <AnimatedSection className="md:w-1/3" delay={0.3}>
-        <div className="rounded-full overflow-hidden w-64 h-64 mx-auto">
-          <Image
-            src="/placeholder.svg?height=256&width=256"
-            alt="Daniel Ramírez"
-            width={256}
-            height={256}
-            className="object-cover"
-          />
-        </div>
+      <div className="rounded-full overflow-hidden w-64 h-64 mx-auto group">
+        <Image
+          src="/profile.webp?height=256&width=256"
+          alt="Daniel Ramírez"
+          width={256}
+          height={256}
+          className="object-cover transition-all duration-300 filter grayscale group-hover:grayscale-0"
+        />
+      </div>
       </AnimatedSection>
     </section>
   )
