@@ -5,6 +5,9 @@ import "./globals.css"
 export const metadata: Metadata = {
   title: "Daniel Ramirez - Portfolio",
   description: "Portfolio",
+  icons: {
+    icon: "/favicon.png"
+  }
 }
 
 export default function RootLayout({

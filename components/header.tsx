@@ -13,7 +13,7 @@ export default function Header() {
     >
       <Link
         href="/"
-        className="text-xl font-medium bg-clip-text text-transparent inline-block"
+        className="text-xl font-bold bg-clip-text text-transparent inline-block"
         style={{
           backgroundImage: "linear-gradient(to right, #A2D0EE, #D4AAD8)",
         }}
