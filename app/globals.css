@@ -11,10 +11,12 @@
   --gray-light: #d9d9d9;
   --gray-medium: #8a8a8a;
   --gray-dark: #484747;
+  --background-dark-1: #17212b;
+  --background-dark-2: #1d0f1d;
 }
 
 body {
-  background-color: var(--background);
+  background: radial-gradient(circle, var(--background-dark-1) 10%, var(--background-dark-2) 50%, #1e1e1e 90%);
   color: var(--foreground);
 }
 
