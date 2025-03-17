@@ -11,7 +11,7 @@ interface Project {
 
 export default function ProjectCard({ name, link, desc, tags, image }: Project) {
   return (
-    <div className="bg-[#1e1e1e] border border-[#484747] rounded-lg overflow-hidden min-h-[344px]">
+<div className="bg-[#1e1e1e] border border-[#484747] rounded-lg overflow-hidden min-h-[344px] transition-all duration-300 ease-in-out hover:transform hover:scale-[1.02] hover:shadow-[0_0_15px_rgba(255,255,255,0.2)] hover:z-10">
       <div className="relative h-48">
         <Image src={image} alt={name} fill style={{objectFit: "cover"}} />
       </div>
