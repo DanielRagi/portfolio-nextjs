@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/cognitive-playroom/:path*",
+      "destination": "https://cognitive-playroom.vercel.app/:path*"
+    }
+  ]
+}
