@@ -4,14 +4,14 @@
     "link": "https://cognitive-playroom.vercel.app/",
     "desc": "Videojuego para la estimulación cognitiva de personas con enfermedad de Alzheimer.",
     "tags": ["Unity", "C#", "Next.js"],
-    "image": "/projects/project1.webp"
+    "image": "/projects/project_001_001.webp"
   },
   {
-    "name": "Dushi: Web App",
+    "name": "Dushi Platform",
     "link": "https://dushialimentos.co",
     "desc": "E-commerce, administración e intranet a medida para empresa de alimentos saludables.",
     "tags": ["Node.js", "MongoDB", "EJS"],
-    "image": "/projects/project2.webp"
+    "image": "/projects/project_002_001.webp"
   },
   {
     "name": "Pronto...",
