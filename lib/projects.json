@@ -1,7 +1,7 @@
 [
   {
     "name": "Cognitive Playroom",
-    "link": "/cognitive-playroom",
+    "link": "https://cognitive-playroom.vercel.app/",
     "desc": "Videojuego para la estimulación cognitiva de personas con enfermedad de Alzheimer.",
     "tags": ["Unity", "C#", "Next.js"],
     "image": "/projects/project1.webp"
