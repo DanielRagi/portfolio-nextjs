@@ -1,9 +1,9 @@
 [
   {
-    "name": "Cognitive Videogame",
+    "name": "Cognitive Playroom",
     "link": "#",
     "desc": "Videojuego para la estimulación cognitiva de personas con enfermedad de Alzheimer.",
-    "tags": ["Unity", "C#"],
+    "tags": ["Unity", "C#", "Next.js"],
     "image": "/projects/project1.webp"
   },
   {
