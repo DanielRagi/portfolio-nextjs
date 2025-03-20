@@ -2,8 +2,8 @@
 
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { useState } from "react"
-import { ChevronDown } from "lucide-react"
+import { useState, useRef, useEffect } from "react"
+import { ChevronDown, Globe, Check } from "lucide-react"
 import { useRouter } from "next/navigation"
 import { i18n } from "@/lib/i18n-config"
 import type { Locale } from "@/lib/i18n-config"
@@ -12,6 +12,21 @@ import { setCookie } from "@/lib/cookies"
 export default function Header({ lang, dict }: { lang: Locale; dict: any }) {
   const router = useRouter()
   const [isOpen, setIsOpen] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
+
+  // Cerrar el menú cuando se hace clic fuera de él
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false)
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [])
 
   const switchLanguage = (newLang: Locale) => {
     if (newLang === lang) return
@@ -65,31 +80,38 @@ export default function Header({ lang, dict }: { lang: Locale; dict: any }) {
           {dict.header.projects}
         </Link>
 
-        {/* Selector de idioma */}
-        <div className="relative">
+        {/* Selector de idioma mejorado */}
+        <div className="relative" ref={dropdownRef}>
           <button
-            className="flex items-center hover:text-[#ffda44] transition-colors"
+            className="flex items-center px-3 py-1.5 rounded-md border border-[#484747] bg-[#2a2a2a] hover:border-[#ffda44] transition-all"
             onClick={() => setIsOpen(!isOpen)}
+            aria-label="Cambiar idioma"
           >
-            {lang.toUpperCase()}
-            <ChevronDown className="ml-1 h-4 w-4" />
+            <Globe className="h-4 w-4 mr-2" />
+            <span className="font-medium">{lang.toUpperCase()}</span>
+            <ChevronDown className="ml-1.5 h-3.5 w-3.5 opacity-70" />
           </button>
 
           {isOpen && (
-            <div className="absolute right-0 mt-2 w-32 rounded-md shadow-lg bg-[#1e1e1e] border border-[#484747] z-10">
-              <div className="py-1">
-                {i18n.locales.map((locale) => (
-                  <button
-                    key={locale}
-                    className={`block px-4 py-2 text-sm w-full text-left hover:bg-[#2a2a2a] ${
-                      locale === lang ? "text-[#ffda44]" : "text-white"
-                    }`}
-                    onClick={() => switchLanguage(locale)}
-                  >
-                    {dict.language[locale]}
-                  </button>
-                ))}
-              </div>
+            <div
+              className="absolute right-0 mt-2 w-40 rounded-md shadow-lg bg-[#2a2a2a] border border-[#484747] z-10 overflow-hidden"
+              ref={dropdownRef}
+            >
+              {i18n.locales.map((locale) => (
+                <button
+                  key={locale}
+                  className={`flex items-center w-full px-4 py-2.5 text-sm text-left hover:bg-[#3a3a3a] transition-colors ${
+                    locale === lang
+                      ? "bg-gradient-to-r from-[#A2D0EE]/20 to-[#D4AAD8]/20 text-white font-medium"
+                      : "text-[#d9d9d9]"
+                  }`}
+                  onClick={() => switchLanguage(locale)}
+                >
+                  <span className="mr-2 text-lg">{locale === "es" ? "🇪🇸" : "🇬🇧"}</span>
+                  {dict.language[locale]}
+                  {locale === lang && <Check className="ml-auto h-4 w-4 text-[#ffda44]" />}
+                </button>
+              ))}
             </div>
           )}
         </div>
