@@ -1,0 +1,42 @@
+{
+  "header": {
+    "home": "Home",
+    "projects": "Projects"
+  },
+  "hero": {
+    "greeting": "Hello World.",
+    "intro": "I'm",
+    "name": "Daniel.",
+    "title": "Full Stack Developer | Computer Engineer",
+    "description": "I transform ideas into code and code into impact. I enjoy solving problems with logical and innovative solutions. Currently programming at Universitas XXI."
+  },
+  "projects": {
+    "title": "Projects",
+    "visit": "Visit",
+    "items": [
+      {
+        "name": "Cognitive Playroom",
+        "desc": "Video game for cognitive stimulation of people with Alzheimer's disease."
+      },
+      {
+        "name": "Dushi Platform",
+        "desc": "Custom e-commerce, administration, and intranet for a healthy food company."
+      },
+      {
+        "name": "Coming soon...",
+        "desc": ""
+      }
+    ]
+  },
+  "footer": {
+    "text": "From 🇨🇴 to the world."
+  },
+  "scroll": {
+    "text": "Projects"
+  },
+  "language": {
+    "es": "Spanish",
+    "en": "English"
+  }
+}
+

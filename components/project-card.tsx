@@ -1,22 +1,21 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from "next/image"
 
 interface Project {
-  name: string;
-  link: string;
-  desc: string;
-  tags: string[];
-  image: string;
+  name: string
+  link: string
+  desc: string
+  tags: string[]
+  image: string
+  visitText: string
 }
 
-export default function ProjectCard({ name, link, desc, tags, image }: Project) {
+export default function ProjectCard({ name, link, desc, tags, image, visitText }: Project) {
   return (
-<div className="bg-[#1e1e1e] border border-[#484747] rounded-lg overflow-hidden min-h-[344px] transition-all duration-300 ease-in-out hover:transform hover:scale-[1.02] hover:shadow-[0_0_15px_rgba(255,255,255,0.2)] hover:z-10">
+    <div className="bg-[#1e1e1e] border border-[#484747] rounded-lg overflow-hidden min-h-[344px] transition-all duration-300 ease-in-out hover:transform hover:scale-[1.02] hover:shadow-[0_0_15px_rgba(255,255,255,0.2)] hover:z-10">
       <div className="relative h-48">
-        <Image src={image} alt={name} fill style={{objectFit: "cover"}} />
+        <Image src={image || "/placeholder.svg"} alt={name} fill style={{ objectFit: "cover" }} />
       </div>
       <div className="p-4">
-        
         <div className="flex justify-between items-center mb-2">
           <h3 className="text-xl font-semibold">{name}</h3>
           {link !== "" && (
@@ -32,7 +31,7 @@ export default function ProjectCard({ name, link, desc, tags, image }: Project) 
                 borderImage: "linear-gradient(to right, #A2D0EE, #D4AAD8) 1",
               }}
             >
-              Visitar
+              {visitText}
             </a>
           )}
         </div>
@@ -50,5 +49,6 @@ export default function ProjectCard({ name, link, desc, tags, image }: Project) 
         </div>
       </div>
     </div>
-  );
+  )
 }
+

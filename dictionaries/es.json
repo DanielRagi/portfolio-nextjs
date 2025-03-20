@@ -1,0 +1,42 @@
+{
+  "header": {
+    "home": "Inicio",
+    "projects": "Proyectos"
+  },
+  "hero": {
+    "greeting": "Hello World.",
+    "intro": "Soy",
+    "name": "Daniel.",
+    "title": "Programador Full Stack | Ingeniero Informático",
+    "description": "Transformo ideas en código y código en impacto. Me gusta resolver problemas con soluciones lógicas e innovadoras. Actualmente programando en Universitas XXI."
+  },
+  "projects": {
+    "title": "Proyectos",
+    "visit": "Visitar",
+    "items": [
+      {
+        "name": "Cognitive Playroom",
+        "desc": "Videojuego para la estimulación cognitiva de personas con enfermedad de Alzheimer."
+      },
+      {
+        "name": "Dushi Platform",
+        "desc": "E-commerce, administración e intranet a medida para empresa de alimentos saludables."
+      },
+      {
+        "name": "Pronto...",
+        "desc": ""
+      }
+    ]
+  },
+  "footer": {
+    "text": "From 🇨🇴 to the world."
+  },
+  "scroll": {
+    "text": "Proyectos"
+  },
+  "language": {
+    "es": "Español",
+    "en": "Inglés"
+  }
+}
+

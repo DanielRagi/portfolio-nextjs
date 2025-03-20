@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 import { ChevronDown } from "lucide-react"
 import { useIsMobile } from "@/hooks/use-mobile"
 
-export default function ScrollIndicator() {
+export default function ScrollIndicator({ dict }: { dict: any }) {
   const [isVisible, setIsVisible] = useState(true)
   const isMobile = useIsMobile()
 
@@ -35,7 +35,7 @@ export default function ScrollIndicator() {
       transition={{ duration: 0.3 }}
       style={{ pointerEvents: isVisible ? "auto" : "none" }}
     >
-      <p className="text-white mb-2">Proyectos</p>
+      <p className="text-white mb-2">{dict.scroll.text}</p>
       <motion.div animate={{ y: [0, 10, 0] }} transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1.5 }}>
         <ChevronDown size={24} className="text-[#ffda44]" />
       </motion.div>
