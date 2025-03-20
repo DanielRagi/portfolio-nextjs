@@ -16,15 +16,21 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params,
 }: Readonly<{
   children: React.ReactNode
-  params: { lang: Locale }
+  params: Promise<{ lang: Locale }>
 }>) {
+  // Esperar a que los parámetros estén disponibles
+  const { lang } = await params
+
+  // Asegurarse de que lang es una de las localizaciones válidas
+  const validLang = i18n.locales.includes(lang) ? lang : i18n.defaultLocale
+
   return (
-    <html lang={params.lang} className="scroll-smooth">
+    <html lang={validLang} className="scroll-smooth">
       <body>{children}</body>
     </html>
   )
