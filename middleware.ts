@@ -33,7 +33,7 @@ function getLocale(request: NextRequest) {
   }
 
   // Idioma por defecto
-  return "es"
+  return "en"
 }
 
 export function middleware(request: NextRequest) {
