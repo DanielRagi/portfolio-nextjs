@@ -7,17 +7,17 @@
     "image": "/projects/project_001_001.webp"
   },
   {
+    "name": "Crudiverse",
+    "link": "https://crudiverse.com/",
+    "desc": "Una guía para crear e integrar APIs CRUD con diversas tecnologías backend y frontend.",
+    "tags": ["Next.js"],
+    "image": "/projects/project_003_001.webp"
+  },
+  {
     "name": "Dushi Platform",
     "link": "https://dushialimentos.co",
     "desc": "E-commerce, administración e intranet a medida para empresa de alimentos saludables.",
     "tags": ["Node.js", "MongoDB", "EJS"],
     "image": "/projects/project_002_001.webp"
-  },
-  {
-    "name": "Pronto...",
-    "link": "",
-    "desc": "",
-    "tags": [],
-    "image": "/projects/project_placeholder.webp"
   }
 ]

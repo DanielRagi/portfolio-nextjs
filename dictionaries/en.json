@@ -19,12 +19,12 @@
         "desc": "Video game for cognitive stimulation of people with Alzheimer's disease."
       },
       {
-        "name": "Dushi Platform",
-        "desc": "Custom e-commerce, administration, and intranet for a healthy food company."
+        "name": "Crudiverse",
+        "desc": "A guide to building and integrating CRUD APIs with backend and frontend technologies."
       },
       {
-        "name": "Coming soon...",
-        "desc": ""
+        "name": "Dushi Platform",
+        "desc": "Custom e-commerce, administration, and intranet for a healthy food company."
       }
     ]
   },
