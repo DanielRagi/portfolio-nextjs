@@ -8,7 +8,7 @@
   },
   {
     "name": "Crudiverse",
-    "link": "https://crudiverse.com/",
+    "link": "https://crudiverse.vercel.app/",
     "desc": "Una guía para crear e integrar APIs CRUD con diversas tecnologías backend y frontend.",
     "tags": ["Next.js"],
     "image": "/projects/project_003_001.webp"
