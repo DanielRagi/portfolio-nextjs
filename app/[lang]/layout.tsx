@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.png",
   },
+  other: {
+    'facebook-domain-verification': 'tbbi0rdm196myjqryyay0ok4eb51tq',
+  },
 }
 
 export default async function RootLayout({
