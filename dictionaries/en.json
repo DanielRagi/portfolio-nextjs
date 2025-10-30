@@ -1,7 +1,8 @@
 {
   "header": {
     "home": "Home",
-    "projects": "Projects"
+    "projects": "Projects",
+    "atomic": "Atomic Software Studio"
   },
   "hero": {
     "greeting": "Hello World.",

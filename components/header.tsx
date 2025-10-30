@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { useState, useRef, useEffect } from "react"
-import { ChevronDown, Globe, Check } from "lucide-react"
+import { ChevronDown, Globe, Check, ExternalLink } from "lucide-react"
 import { useRouter } from "next/navigation"
 import { i18n } from "@/lib/i18n-config"
 import type { Locale } from "@/lib/i18n-config"
@@ -78,6 +78,15 @@ export default function Header({ lang, dict }: { lang: Locale; dict: any }) {
           }}
         >
           {dict.header.projects}
+        </Link>
+        {/* Link + icono externo (no emoji) */}
+        <Link
+          href="https://atomicstudio.dev/"
+          className="text-[#A2D0EE] hover:text-[#ffda44] transition-colors flex items-center"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {dict.header.atomic} <ExternalLink className="ml-2 h-4 w-4" aria-hidden="true" />
         </Link>
 
         {/* Selector de idioma mejorado */}
