@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { Github, Linkedin } from "lucide-react"
+import { Github, Linkedin, ExternalLink } from "lucide-react"
 import AnimatedSection from "./animated-section"
 
 export default function Hero({ dict }: { dict: any }) {
@@ -40,6 +40,15 @@ export default function Hero({ dict }: { dict: any }) {
           >
             <Github size={24} />
             <span className="sr-only">GitHub</span>
+          </a>
+          <a
+            href="https://www.fiverr.com/s/R7KqEPx"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[#ffda44] transition-colors"
+          >
+            <Image src="/fiverr.png" alt="Fiverr" width={24} height={24} />
+            <span className="sr-only">Fiverr</span>
           </a>
         </div>
       </AnimatedSection>

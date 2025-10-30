@@ -54,7 +54,7 @@ export function middleware(request: NextRequest) {
 export const config = {
   matcher: [
     // Excluir rutas internas y archivos estáticos
-    "/((?!api|_next/static|_next/image|favicon.ico|projects|profile.webp).*)",
+    "/((?!api|_next/static|_next/image|favicon.ico|projects|profile.webp|fiverr.png).*)",
   ],
 }
 
