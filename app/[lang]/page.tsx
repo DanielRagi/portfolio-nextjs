@@ -21,7 +21,7 @@ export default async function Home({
   const dict = await getDictionary(validLang)
 
   return (
-    <div className="min-h-screen text-white">
+    <div className="min-h-screen text-ink">
       <Header lang={validLang} dict={dict} />
       <Hero dict={dict} />
       <Projects dict={dict} />

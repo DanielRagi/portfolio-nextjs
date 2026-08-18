@@ -1,99 +1,81 @@
 import type { Config } from "tailwindcss"
 
+/** Wraps a channel-triplet CSS variable so opacity modifiers keep working. */
+const token = (name: string) => `rgb(var(--${name}) / <alpha-value>)`
+
 const config: Config = {
-  darkMode: ["class"],
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./app/**/*.{js,ts,jsx,tsx,mdx}", "./components/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
+    // The palette is deliberately closed: no Tailwind default colors, so a
+    // stray `text-gray-400` fails loudly instead of quietly drifting off-system.
+    colors: {
+      transparent: "transparent",
+      current: "currentColor",
+      ground: token("ground"),
+      surface: token("surface"),
+      "surface-raised": token("surface-raised"),
+      line: token("line"),
+      "line-soft": token("line-soft"),
+      ink: token("ink"),
+      "ink-muted": token("ink-muted"),
+      "ink-dim": token("ink-dim"),
+      accent: token("accent"),
+      steel: token("steel"),
+      live: token("live"),
+    },
     extend: {
-      colors: {
-        background: "#1e1e1e",
-        foreground: "#ffffff",
-        accent: "#ffda44",
-        "accent-red": "#d80027",
-        "accent-blue": "#0052b4",
-        "gray-light": "#d9d9d9",
-        "gray-medium": "#8a8a8a",
-        "gray-dark": "#484747",
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        chart: {
-          "1": "hsl(var(--chart-1))",
-          "2": "hsl(var(--chart-2))",
-          "3": "hsl(var(--chart-3))",
-          "4": "hsl(var(--chart-4))",
-          "5": "hsl(var(--chart-5))",
-        },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
-        },
+      fontFamily: {
+        display: ["var(--font-display)", "Helvetica Neue", "Arial", "sans-serif"],
+        body: ["var(--font-body)", "Georgia", "Times New Roman", "serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "Menlo", "monospace"],
+      },
+      fontSize: {
+        // [size, { lineHeight, letterSpacing }] — the scale, and nothing outside it.
+        label: ["0.6875rem", { lineHeight: "1.4", letterSpacing: "0.19em" }],
+        meta: ["0.75rem", { lineHeight: "1.5", letterSpacing: "0.08em" }],
+        sm: ["0.9375rem", { lineHeight: "1.6" }],
+        base: ["1.0625rem", { lineHeight: "1.65" }],
+        lead: ["1.1875rem", { lineHeight: "1.6" }],
+        h3: ["1.125rem", { lineHeight: "1.35", letterSpacing: "-0.008em" }],
+        h2: ["clamp(1.75rem, 3.5vw, 2.5rem)", { lineHeight: "1.14", letterSpacing: "-0.022em" }],
+        h1: ["clamp(2.5rem, 6vw, 4rem)", { lineHeight: "1.04", letterSpacing: "-0.03em" }],
+        display: ["clamp(3rem, 8vw, 5.75rem)", { lineHeight: "0.98", letterSpacing: "-0.038em" }],
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        DEFAULT: "3px",
+        sm: "2px",
+        md: "3px",
+        lg: "4px",
+      },
+      spacing: {
+        section: "clamp(4rem, 10vw, 8rem)",
+        gutter: "clamp(1.25rem, 5vw, 3rem)",
+      },
+      maxWidth: {
+        shell: "72rem",
+        measure: "34rem",
+      },
+      transitionTimingFunction: {
+        "out-soft": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "in-out-soft": "cubic-bezier(0.65, 0, 0.35, 1)",
+      },
+      transitionDuration: {
+        micro: "180ms",
+        ui: "320ms",
+        reveal: "700ms",
       },
       keyframes: {
-        "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
-        },
-        "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+        "rise-in": {
+          from: { opacity: "0", transform: "translateY(1.25rem)" },
+          to: { opacity: "1", transform: "translateY(0)" },
         },
       },
       animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
+        "rise-in": "rise-in 700ms cubic-bezier(0.22, 1, 0.36, 1) both",
       },
     },
   },
   plugins: [],
 }
-export default config
 
+export default config

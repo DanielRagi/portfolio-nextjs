@@ -4,9 +4,10 @@ import { useState, useEffect } from "react"
 import projects from "@/lib/projects.json"
 import ProjectCard from "./project-card"
 import AnimatedSection from "./animated-section"
+import type { Dictionary } from "@/lib/dictionary-types"
 import { useInView } from "@/hooks/use-in-view"
 
-export default function Projects({ dict }: { dict: any }) {
+export default function Projects({ dict }: { dict: Dictionary }) {
   const { ref, isInView } = useInView({ threshold: 0.1 })
   const [hasBeenInView, setHasBeenInView] = useState(false)
 

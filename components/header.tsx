@@ -8,8 +8,9 @@ import { useRouter } from "next/navigation"
 import { i18n } from "@/lib/i18n-config"
 import type { Locale } from "@/lib/i18n-config"
 import { setCookie } from "@/lib/cookies"
+import type { Dictionary } from "@/lib/dictionary-types"
 
-export default function Header({ lang, dict }: { lang: Locale; dict: any }) {
+export default function Header({ lang, dict }: { lang: Locale; dict: Dictionary }) {
   const router = useRouter()
   const [isOpen, setIsOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)

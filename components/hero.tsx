@@ -1,10 +1,11 @@
 "use client"
 
 import Image from "next/image"
-import { Github, Linkedin, ExternalLink } from "lucide-react"
+import { Github, Linkedin } from "lucide-react"
 import AnimatedSection from "./animated-section"
+import type { Dictionary } from "@/lib/dictionary-types"
 
-export default function Hero({ dict }: { dict: any }) {
+export default function Hero({ dict }: { dict: Dictionary }) {
   return (
     <section className="container mx-auto px-4 min-h-[calc(100vh-80px)] flex flex-col md:flex-row items-center justify-center">
       <AnimatedSection className="md:w-1/3 mb-10 md:mb-0" delay={0.1}>

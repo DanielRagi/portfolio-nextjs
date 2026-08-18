@@ -4,8 +4,9 @@ import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { ChevronDown } from "lucide-react"
 import { useIsMobile } from "@/hooks/use-mobile"
+import type { Dictionary } from "@/lib/dictionary-types"
 
-export default function ScrollIndicator({ dict }: { dict: any }) {
+export default function ScrollIndicator({ dict }: { dict: Dictionary }) {
   const [isVisible, setIsVisible] = useState(true)
   const isMobile = useIsMobile()
 
