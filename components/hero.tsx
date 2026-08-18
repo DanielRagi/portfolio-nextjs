@@ -56,7 +56,7 @@ export default function Hero({ dict }: { dict: Dictionary }) {
       <AnimatedSection className="md:w-1/3" delay={0.3}>
         <div className="rounded-full overflow-hidden w-64 h-64 mx-auto group">
           <Image
-            src="/profile.webp?height=256&width=256"
+            src="/profile.webp"
             alt="Daniel Ramírez"
             width={256}
             height={256}

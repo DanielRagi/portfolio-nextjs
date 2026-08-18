@@ -1,10 +1,17 @@
-import { dirname } from "node:path"
-import { fileURLToPath } from "node:url"
-import { FlatCompat } from "@eslint/eslintrc"
+import coreWebVitals from "eslint-config-next/core-web-vitals"
+import typescript from "eslint-config-next/typescript"
 
-const compat = new FlatCompat({ baseDirectory: dirname(fileURLToPath(import.meta.url)) })
-
-export default [
+/**
+ * Flat config. eslint-config-next ships native flat configs as of Next 16,
+ * so no FlatCompat shim is needed.
+ *
+ * `next build` no longer runs linting, so lint is wired into `npm run check`
+ * instead of riding along with the build.
+ */
+const config = [
   { ignores: [".next/**", "node_modules/**", "next-env.d.ts"] },
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
+  ...coreWebVitals,
+  ...typescript,
 ]
+
+export default config

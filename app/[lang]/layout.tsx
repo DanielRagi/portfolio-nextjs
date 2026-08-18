@@ -30,7 +30,10 @@ export default async function RootLayout({
   const locale: Locale = isLocale(lang) ? lang : i18n.defaultLocale
 
   return (
-    <html lang={locale} className={fontVariables}>
+    // data-scroll-behavior opts back into Next's scroll reset on navigation;
+    // without it, the global `scroll-behavior: smooth` also animates route
+    // changes, which Next 16 no longer overrides on its own.
+    <html lang={locale} className={fontVariables} data-scroll-behavior="smooth">
       <body>{children}</body>
     </html>
   )
