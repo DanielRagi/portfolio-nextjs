@@ -12,12 +12,17 @@ export const site = {
     en: "Full-stack engineer building custom platforms — online stores, internal tools, and interactive products — for companies that need more than a template.",
     es: "Ingeniero full-stack que construye plataformas a medida — tiendas en línea, herramientas internas y productos interactivos — para empresas que necesitan más que una plantilla.",
   },
-  profiles: [
-    "https://www.linkedin.com/in/danielramg/",
-    "https://github.com/DanielRagi",
-    "https://atomicstudio.dev/",
-  ],
+  /** Every outbound link on the site. Edit a URL here and it changes everywhere. */
+  links: {
+    linkedin: "https://www.linkedin.com/in/danielramg/",
+    github: "https://github.com/DanielRagi",
+    fiverr: "https://www.fiverr.com/s/R7KqEPx",
+    studio: "https://atomicstudio.dev/",
+  },
 } as const
+
+/** What schema.org's `sameAs` should list: the profiles that are really him. */
+export const profiles = [site.links.linkedin, site.links.github, site.links.studio]
 
 export function absolute(path: string) {
   return new URL(path, site.url).toString()

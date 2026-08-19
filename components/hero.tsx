@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { Github, Linkedin } from "lucide-react"
 import type { Dictionary } from "@/lib/dictionary-types"
+import { site } from "@/lib/site"
 import { Sequence, Step } from "./motion"
 
 /**
@@ -12,8 +13,8 @@ import { Sequence, Step } from "./motion"
  */
 
 const LINKS = [
-  { href: "https://www.linkedin.com/in/danielramg/", label: "LinkedIn", Icon: Linkedin },
-  { href: "https://github.com/DanielRagi", label: "GitHub", Icon: Github },
+  { href: site.links.linkedin, label: "LinkedIn", Icon: Linkedin },
+  { href: site.links.github, label: "GitHub", Icon: Github },
 ]
 
 export default function Hero({ dict }: { dict: Dictionary }) {
@@ -66,7 +67,7 @@ export default function Hero({ dict }: { dict: Dictionary }) {
                 </a>
               ))}
               <a
-                href="https://www.fiverr.com/s/R7KqEPx"
+                href={site.links.fiverr}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="opacity-60 transition-opacity duration-micro ease-out-soft hover:opacity-100"

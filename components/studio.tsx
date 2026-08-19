@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react"
 import type { Dictionary } from "@/lib/dictionary-types"
+import { site } from "@/lib/site"
 import { Reveal } from "./motion"
 
 /**
@@ -28,7 +29,7 @@ export default function Studio({ dict }: { dict: Dictionary }) {
         </ul>
 
         <a
-          href="https://atomicstudio.dev/"
+          href={site.links.studio}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex w-fit items-center gap-2 rounded border border-accent/40 px-4 py-2.5 font-mono text-meta uppercase text-accent transition-colors duration-micro ease-out-soft hover:border-accent hover:bg-accent/10"

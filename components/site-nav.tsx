@@ -5,6 +5,7 @@ import { useEffect, useState } from "react"
 import { ArrowUpRight } from "lucide-react"
 import type { Locale } from "@/lib/i18n-config"
 import type { Dictionary } from "@/lib/dictionary-types"
+import { site } from "@/lib/site"
 import LanguageSwitch from "./language-switch"
 
 /**
@@ -64,7 +65,7 @@ export default function SiteNav({ lang, dict }: { lang: Locale; dict: Dictionary
           ))}
 
           <a
-            href="https://atomicstudio.dev/"
+            href={site.links.studio}
             target="_blank"
             rel="noopener noreferrer"
             className="hidden items-center gap-1 font-mono text-meta uppercase text-ink-muted transition-colors duration-micro ease-out-soft hover:text-ink sm:flex"

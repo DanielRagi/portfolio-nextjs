@@ -4,7 +4,7 @@ import "../globals.css"
 import { fontVariables } from "../fonts"
 import MotionProvider from "@/components/motion-provider"
 import { i18n, isLocale, type Locale } from "@/lib/i18n-config"
-import { absolute, site } from "@/lib/site"
+import { absolute, profiles, site } from "@/lib/site"
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }))
@@ -84,7 +84,7 @@ export default async function RootLayout({
     jobTitle: site.jobTitle[locale],
     description: site.description[locale],
     image: absolute("/profile.webp"),
-    sameAs: [...site.profiles],
+    sameAs: profiles,
     address: { "@type": "PostalAddress", addressCountry: "CO" },
   }
 

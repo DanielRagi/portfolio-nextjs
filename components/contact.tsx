@@ -4,13 +4,12 @@ import Image from "next/image"
 import { useEffect, useState } from "react"
 import { ArrowUpRight, Check, Copy } from "lucide-react"
 import type { Dictionary } from "@/lib/dictionary-types"
-
-export const EMAIL = "hola@danielramirez.pro"
+import { site } from "@/lib/site"
 
 const ELSEWHERE = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/danielramg/" },
-  { label: "GitHub", href: "https://github.com/DanielRagi" },
-  { label: "Fiverr", href: "https://www.fiverr.com/s/R7KqEPx", icon: "/fiverr.png" },
+  { label: "LinkedIn", href: site.links.linkedin },
+  { label: "GitHub", href: site.links.github },
+  { label: "Fiverr", href: site.links.fiverr, icon: "/fiverr.png" },
 ]
 
 /**
@@ -28,7 +27,7 @@ export default function Contact({ dict }: { dict: Dictionary }) {
 
   const copy = async () => {
     try {
-      await navigator.clipboard.writeText(EMAIL)
+      await navigator.clipboard.writeText(site.email)
       setCopied(true)
     } catch {
       // Clipboard can be blocked by permissions; the mailto link still works.
@@ -50,10 +49,10 @@ export default function Contact({ dict }: { dict: Dictionary }) {
 
       <div className="flex flex-wrap items-center gap-3">
         <a
-          href={`mailto:${EMAIL}`}
+          href={`mailto:${site.email}`}
           className="font-display text-h2 font-semibold text-ink transition-colors duration-ui ease-out-soft hover:text-accent"
         >
-          {EMAIL}
+          {site.email}
         </a>
 
         <button
