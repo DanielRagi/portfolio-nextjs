@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, type ReactNode } from "react"
 import { useRouter } from "next/navigation"
-import { motion, useReducedMotion } from "framer-motion"
+import { m, useReducedMotion } from "framer-motion"
 import { X } from "lucide-react"
 import type { Locale } from "@/lib/i18n-config"
 import type { Dictionary } from "@/lib/dictionary-types"
@@ -116,7 +116,7 @@ export default function CasePanel({
 
   return (
     <div className="fixed inset-0 z-50">
-      <motion.div
+      <m.div
         className="absolute inset-0 bg-ground/85 backdrop-blur-sm"
         initial={reduced ? false : { opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -125,7 +125,7 @@ export default function CasePanel({
         aria-hidden="true"
       />
 
-      <motion.div
+      <m.div
         ref={panel}
         role="dialog"
         aria-modal="true"
@@ -161,7 +161,7 @@ export default function CasePanel({
 
           {children}
         </div>
-      </motion.div>
+      </m.div>
     </div>
   )
 }

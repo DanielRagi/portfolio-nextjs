@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, useReducedMotion, type Variants } from "framer-motion"
+import { m, useReducedMotion, type Variants } from "framer-motion"
 import type { ReactNode } from "react"
 
 /**
@@ -36,7 +36,7 @@ export function Sequence({
   const reduced = useReducedMotion()
 
   return (
-    <motion.div
+    <m.div
       className={className}
       initial={reduced ? false : "hidden"}
       animate="shown"
@@ -45,7 +45,7 @@ export function Sequence({
       }}
     >
       {children}
-    </motion.div>
+    </m.div>
   )
 }
 
@@ -54,9 +54,9 @@ export function Step({ children, className }: { children: ReactNode; className?:
   const reduced = useReducedMotion()
 
   return (
-    <motion.div className={className} variants={reduced ? undefined : riseIn}>
+    <m.div className={className} variants={reduced ? undefined : riseIn}>
       {children}
-    </motion.div>
+    </m.div>
   )
 }
 
@@ -75,7 +75,7 @@ export function Reveal({
   if (reduced) return <div className={className}>{children}</div>
 
   return (
-    <motion.div
+    <m.div
       className={className}
       initial="hidden"
       whileInView="shown"
@@ -89,6 +89,6 @@ export function Reveal({
       }}
     >
       {children}
-    </motion.div>
+    </m.div>
   )
 }

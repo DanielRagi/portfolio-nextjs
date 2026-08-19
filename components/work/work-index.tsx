@@ -3,7 +3,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useCallback, useRef, useState } from "react"
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion"
+import { AnimatePresence, m, useReducedMotion } from "framer-motion"
 import { ArrowUpRight } from "lucide-react"
 import type { Locale } from "@/lib/i18n-config"
 import type { Dictionary } from "@/lib/dictionary-types"
@@ -118,7 +118,7 @@ export default function WorkIndex({
       {/* Floating preview. Pointer-events off so it never blocks the row beneath. */}
       <AnimatePresence>
         {active && !reduced ? (
-          <motion.div
+          <m.div
             key={active.slug}
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -132,7 +132,7 @@ export default function WorkIndex({
             aria-hidden="true"
           >
             <Image src={active.hero} alt="" fill sizes="288px" className="object-cover" />
-          </motion.div>
+          </m.div>
         ) : null}
       </AnimatePresence>
     </div>
