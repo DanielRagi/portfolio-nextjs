@@ -1,0 +1,14 @@
+{
+  "year": 2024,
+  "status": "live",
+  "featured": true,
+  "order": 1,
+  "stack": ["Unity", "C#", "Next.js"],
+  "links": {
+    "live": "https://cognitive-playroom.vercel.app/"
+  },
+  "images": {
+    "hero": "/projects/project_001_001.webp",
+    "details": []
+  }
+}

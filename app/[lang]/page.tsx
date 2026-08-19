@@ -24,7 +24,7 @@ export default async function Home({
     <div className="min-h-screen text-ink">
       <Header lang={validLang} dict={dict} />
       <Hero dict={dict} />
-      <Projects dict={dict} />
+      <Projects lang={validLang} dict={dict} />
       <Footer dict={dict} />
       <ScrollIndicator dict={dict} />
     </div>
