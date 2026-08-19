@@ -1,27 +1,91 @@
 {
   "nav": {
+    "approach": "Método",
     "work": "Proyectos",
+    "contact": "Contacto",
     "studio": "Atomic Studio",
-    "skipToContent": "Saltar al contenido",
-    "openMenu": "Abrir menú",
-    "closeMenu": "Cerrar menú"
+    "skipToContent": "Saltar al contenido"
   },
   "hero": {
     "statement": "Software hecho para cómo funciona tu negocio de verdad.",
     "support": "Diseño y construyo plataformas a medida — tiendas en línea, herramientas internas, productos interactivos — para empresas que necesitan más que una plantilla.",
     "role": "Ingeniero full-stack",
     "location": "Colombia",
-    "current": "Actualmente programando en Universitas XXI",
-    "scrollHint": "Proyectos"
+    "current": "Actualmente programando en Universitas XXI"
+  },
+  "approach": {
+    "eyebrow": "Método",
+    "title": "Cómo trabajo.",
+    "paragraphs": [
+      "Empiezo por el problema, no por la tecnología. La mayoría de los proyectos llegan ya descritos como un software — una tienda, un panel, una app. La conversación que sirve es la de abajo: qué hace el negocio todos los días, dónde se rompe el proceso actual y qué tendría que ser cierto para que uno nuevo se sostenga.",
+      "Construyo pensando en quien está del otro lado. Una herramienta en la que tres personas viven a diario tiene requisitos distintos a los de una tienda que mil desconocidos ven una sola vez, y un videojuego para alguien con Alzheimer tiene requisitos distintos a los dos. Definir para quién es, primero, es lo que mantiene honestas todas las decisiones que vienen después.",
+      "Prefiero entregar algo pequeño que encaje antes que algo grande que casi encaja. El alcance crece solo; y lo que hace que un software se sienta cuidado — los estados vacíos, las palabras, qué pasa cuando algo sale mal — es lo primero que se recorta cuando crece. Así que mantengo la superficie estrecha y la termino bien."
+    ],
+    "portraitCaption": "Daniel Ramírez — Ingeniero informático, Colombia"
+  },
+  "capabilities": {
+    "eyebrow": "Capacidades",
+    "title": "Para qué puedes contratarme.",
+    "groups": [
+      {
+        "name": "Plataformas web y comercio electrónico",
+        "description": "Tiendas, pagos y toda la administración que va detrás — construidos alrededor de cómo vendes de verdad y no de lo que supone una plantilla.",
+        "stack": [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Node.js",
+          "MongoDB"
+        ]
+      },
+      {
+        "name": "Herramientas internas e intranets",
+        "description": "El software sin glamour en el que vive un equipo: inventario, pedidos, roles y permisos, reportes. Suele ser lo que más rendimiento le da a un negocio.",
+        "stack": [
+          "Node.js",
+          "MongoDB",
+          "EJS",
+          "Next.js"
+        ]
+      },
+      {
+        "name": "Interactivo y videojuegos",
+        "description": "Trabajo en Unity para productos donde la interacción es el punto — formación, simulación, accesibilidad, juego.",
+        "stack": [
+          "Unity",
+          "C#"
+        ]
+      }
+    ],
+    "note": "Soy más fuerte en la parte de plataformas web, que es donde ha estado la mayor parte de mi trabajo. Si necesitas algo cercano, pregunta — prefiero decirte que no es mi terreno a aprenderlo con tu presupuesto."
+  },
+  "studio": {
+    "eyebrow": "Atomic Software Studio",
+    "title": "Para el trabajo que necesita equipo.",
+    "body": "Además de mis propios proyectos, construyo con Atomic Software Studio, que se dedica a sistemas inteligentes y automatizados para empresas. Cuando un proyecto necesita más manos que las mías, va para allá.",
+    "services": [
+      "Chatbots con IA y automatización",
+      "Desarrollo web",
+      "Integraciones y APIs",
+      "Soluciones en la nube"
+    ],
+    "cta": "Visitar el estudio"
+  },
+  "contact": {
+    "eyebrow": "Contacto",
+    "title": "Cuéntame qué estás construyendo.",
+    "body": "Si tienes un proceso que no encaja en un software de catálogo, o un producto que hay que construir bien, escríbeme. Cuéntame cuál es el problema y más o menos para cuándo lo necesitas, y te digo con franqueza si soy la persona indicada.",
+    "availability": "Disponible para nuevos proyectos",
+    "copy": "Copiar dirección",
+    "copied": "Copiado",
+    "elsewhere": "En otros lugares"
   },
   "work": {
     "eyebrow": "Proyectos",
     "title": "Tres proyectos, y el razonamiento detrás de cada uno.",
-    "visit": "Visitar",
     "open": "Ver caso",
     "close": "Cerrar",
     "next": "Siguiente",
-    "prev": "Anterior",
     "live": "Ver en vivo",
     "source": "Código",
     "role": "Rol",

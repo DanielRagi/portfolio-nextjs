@@ -1,27 +1,91 @@
 {
   "nav": {
+    "approach": "Approach",
     "work": "Work",
+    "contact": "Contact",
     "studio": "Atomic Studio",
-    "skipToContent": "Skip to content",
-    "openMenu": "Open menu",
-    "closeMenu": "Close menu"
+    "skipToContent": "Skip to content"
   },
   "hero": {
     "statement": "Software built for how your business actually works.",
     "support": "I design and build custom platforms — online stores, internal tools, interactive products — for companies that need more than a template.",
     "role": "Full-stack engineer",
     "location": "Colombia",
-    "current": "Currently engineering at Universitas XXI",
-    "scrollHint": "Selected work"
+    "current": "Currently engineering at Universitas XXI"
+  },
+  "approach": {
+    "eyebrow": "Approach",
+    "title": "How I work.",
+    "paragraphs": [
+      "I start with the problem, not the stack. Most projects arrive already described as a piece of software — a store, a dashboard, an app. The useful conversation is the one underneath: what the business actually does every day, where the current process breaks, and what would have to be true for a new one to hold.",
+      "I build for the person at the other end. A tool three people live in every day has different requirements from a storefront a thousand strangers see once, and a game used by someone with Alzheimer's has different requirements from both. Deciding who it is for, first, is what keeps every later decision honest.",
+      "I would rather ship something small that fits than something large that almost does. Scope grows on its own; the parts that make software feel considered — the empty states, the wording, what happens when something goes wrong — are the first things cut when it does. So I keep the surface narrow and finish it properly."
+    ],
+    "portraitCaption": "Daniel Ramírez — Computer engineer, Colombia"
+  },
+  "capabilities": {
+    "eyebrow": "Capabilities",
+    "title": "What you can hire me to build.",
+    "groups": [
+      {
+        "name": "Web platforms and e-commerce",
+        "description": "Storefronts, checkout, and the administration behind them — built around how you actually sell rather than around a theme's assumptions.",
+        "stack": [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Node.js",
+          "MongoDB"
+        ]
+      },
+      {
+        "name": "Internal tools and intranets",
+        "description": "The unglamorous software a team lives inside: inventory, orders, roles and permissions, reporting. Usually the highest-leverage thing a business can build.",
+        "stack": [
+          "Node.js",
+          "MongoDB",
+          "EJS",
+          "Next.js"
+        ]
+      },
+      {
+        "name": "Interactive and games",
+        "description": "Unity work for products where the interaction is the point — training, simulation, accessibility, play.",
+        "stack": [
+          "Unity",
+          "C#"
+        ]
+      }
+    ],
+    "note": "Strongest on the web platform side, where most of my work has been. If you need something adjacent, ask — I would rather tell you it is not my ground than learn it on your budget."
+  },
+  "studio": {
+    "eyebrow": "Atomic Software Studio",
+    "title": "For work that needs a team.",
+    "body": "Alongside my own projects I build with Atomic Software Studio, which takes on intelligent and automated systems for businesses. When a project needs more hands than mine, it goes there.",
+    "services": [
+      "AI chatbots and automation",
+      "Web development",
+      "Integrations and APIs",
+      "Cloud solutions"
+    ],
+    "cta": "Visit the studio"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Tell me what you're building.",
+    "body": "If you have a process that does not fit off-the-shelf software, or a product that needs building properly, write to me. Tell me what the problem is and roughly when you need it, and I will tell you honestly whether I am the right person for it.",
+    "availability": "Available for new projects",
+    "copy": "Copy address",
+    "copied": "Copied",
+    "elsewhere": "Elsewhere"
   },
   "work": {
     "eyebrow": "Selected work",
     "title": "Three projects, and the thinking behind them.",
-    "visit": "Visit",
     "open": "Read case study",
     "close": "Close",
     "next": "Next",
-    "prev": "Previous",
     "live": "Visit live",
     "source": "Source",
     "role": "Role",

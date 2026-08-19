@@ -26,7 +26,15 @@ export default function SiteNav({ lang, dict }: { lang: Locale; dict: Dictionary
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
-  const anchors = [{ href: "#work", label: dict.nav.work }]
+  // Phase 05 filled in the remaining sections, so all three anchors now
+  // point at something that exists.
+  // `compact` anchors survive on the narrowest screens; the rest appear at sm+
+  // so a 360px viewport does not have to carry five items and a switch.
+  const anchors = [
+    { href: "#approach", label: dict.nav.approach, compact: false },
+    { href: "#work", label: dict.nav.work, compact: true },
+    { href: "#contact", label: dict.nav.contact, compact: true },
+  ]
 
   return (
     <header
@@ -47,7 +55,9 @@ export default function SiteNav({ lang, dict }: { lang: Locale; dict: Dictionary
             <a
               key={anchor.href}
               href={anchor.href}
-              className="font-mono text-meta uppercase text-ink-muted transition-colors duration-micro ease-out-soft hover:text-ink"
+              className={`font-mono text-meta uppercase text-ink-muted transition-colors duration-micro ease-out-soft hover:text-ink ${
+                anchor.compact ? "" : "hidden sm:inline"
+              }`}
             >
               {anchor.label}
             </a>
