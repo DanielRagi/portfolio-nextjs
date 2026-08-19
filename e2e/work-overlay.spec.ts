@@ -100,8 +100,15 @@ test.describe("case study overlay", () => {
     await page.goto(`/en/work/${FIRST}`)
 
     await expect(page.getByRole("dialog")).toHaveCount(0)
-    await expect(page.getByRole("heading", { level: 1 })).toContainText("Cognitive Playroom")
-    await expect(page.getByRole("link", { name: /back to work/i })).toBeVisible()
+    // Assert the identity of the project by comparing headings, not by pinning
+    // a name that lives in editable frontmatter.
+    const first = await page.getByRole("heading", { level: 1 }).textContent()
+    expect(first?.trim().length).toBeGreaterThan(0)
+    await expect(page.locator('a[href="/en#work"]')).toBeVisible()
+
+    await page.goto(`/en/work/${SECOND}`)
+    const second = await page.getByRole("heading", { level: 1 }).textContent()
+    expect(second).not.toEqual(first)
   })
 
   test("reloading with the overlay open falls through to the standalone page", async ({ page }) => {
@@ -109,9 +116,18 @@ test.describe("case study overlay", () => {
     await page.locator(`[data-work-row="${FIRST}"]`).click()
     await expect(page.getByRole("dialog")).toBeVisible()
 
+    // Scoped to the dialog: the hero's h1 is still in the document behind it.
+    // That is correct for a modal — aria-modal hides the rest from assistive
+    // tech — but it means an unscoped lookup matches two elements.
+    const inOverlay = await page
+      .getByRole("dialog")
+      .getByRole("heading", { level: 1 })
+      .textContent()
+
     await page.reload()
 
     await expect(page.getByRole("dialog")).toHaveCount(0)
-    await expect(page.getByRole("heading", { level: 1 })).toContainText("Cognitive Playroom")
+    // Same project, now as a standalone page rather than an overlay.
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText(inOverlay ?? "")
   })
 })

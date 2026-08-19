@@ -26,14 +26,24 @@ test.describe("locale routing", () => {
     await expect(page).toHaveURL(/\/es\/work\/dushi-platform$/)
   })
 
-  test("serves both languages of every case study", async ({ page }) => {
-    for (const [locale, heading] of [
-      ["en", "Context"],
-      ["es", "Contexto"],
-    ] as const) {
+  test("serves a genuinely different translation of each case study", async ({ page }) => {
+    const prose: string[] = []
+
+    for (const locale of ["en", "es"] as const) {
       await page.goto(`/${locale}/work/cognitive-playroom`)
-      await expect(page.getByRole("heading", { name: heading })).toBeVisible()
+
+      const article = page.locator("article")
+      await expect(article.locator("h2").first()).toBeVisible()
+
+      prose.push(((await article.textContent()) ?? "").replace(/\s+/g, " ").trim())
     }
+
+    // Comparing the two rather than matching either one: this proves the
+    // Spanish is really translated without pinning the test to copy that is
+    // still being written.
+    expect(prose[0].length).toBeGreaterThan(120)
+    expect(prose[1].length).toBeGreaterThan(120)
+    expect(prose[0]).not.toEqual(prose[1])
   })
 })
 
@@ -98,11 +108,14 @@ test.describe("reduced motion", () => {
 
     await page.goto("/en")
 
+    // Sections are addressed by id, not by their copy: the wording is edited
+    // often and an assertion on it fails for a reason that is not a defect.
     // Revealed content sits below the fold at opacity:0 until it animates, so
-    // this fails loudly if the reduced-motion path stops short-circuiting.
-    await expect(page.getByRole("heading", { name: /how i work/i })).toBeVisible()
-    await expect(page.getByRole("heading", { name: /what you can hire me to build/i })).toBeVisible()
-    await expect(page.getByRole("link", { name: /hola@danielramirez\.pro/i })).toBeVisible()
+    // this still fails loudly if the reduced-motion path stops short-circuiting.
+    for (const id of ["#approach", "#capabilities", "#studio", "#contact"]) {
+      await expect(page.locator(`${id} h2`).first()).toBeVisible()
+      await expect(page.locator(id).getByText(/\S/).first()).toBeVisible()
+    }
 
     await context.close()
   })

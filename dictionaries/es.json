@@ -7,8 +7,8 @@
     "skipToContent": "Saltar al contenido"
   },
   "hero": {
-    "statement": "Software hecho para cómo funciona tu negocio de verdad.",
-    "support": "Diseño y construyo plataformas a medida — tiendas en línea, herramientas internas, productos interactivos — para empresas que necesitan más que una plantilla.",
+    "statement": "Software diseñado para cómo funciona realmente tu negocio.",
+    "support": "Creo experiencias y productos digitales a medida para resolver necesidades reales, simplificar procesos y hacer crecer nuevas ideas.",
     "role": "Ingeniero full-stack",
     "location": "Colombia",
     "current": "Actualmente programando en Universitas XXI"
@@ -17,19 +17,19 @@
     "eyebrow": "Método",
     "title": "Cómo trabajo.",
     "paragraphs": [
-      "Empiezo por el problema, no por la tecnología. La mayoría de los proyectos llegan ya descritos como un software — una tienda, un panel, una app. La conversación que sirve es la de abajo: qué hace el negocio todos los días, dónde se rompe el proceso actual y qué tendría que ser cierto para que uno nuevo se sostenga.",
-      "Construyo pensando en quien está del otro lado. Una herramienta en la que tres personas viven a diario tiene requisitos distintos a los de una tienda que mil desconocidos ven una sola vez, y un videojuego para alguien con Alzheimer tiene requisitos distintos a los dos. Definir para quién es, primero, es lo que mantiene honestas todas las decisiones que vienen después.",
-      "Prefiero entregar algo pequeño que encaje antes que algo grande que casi encaja. El alcance crece solo; y lo que hace que un software se sienta cuidado — los estados vacíos, las palabras, qué pasa cuando algo sale mal — es lo primero que se recorta cuando crece. Así que mantengo la superficie estrecha y la termino bien."
+      "Cada proyecto empieza entendiendo el problema antes de elegir cómo resolverlo. Más allá del producto que se quiere construir, busco entender cómo funciona el negocio, dónde existe fricción y qué cambio tendría un impacto real.",
+      "A partir de ahí, diseño alrededor de las personas que usarán la solución. El contexto, las prioridades y las expectativas del usuario guían las decisiones de producto mucho más que cualquier tecnología específica.",
+      "Trabajo con alcances deliberados: menos funciones, mejor resueltas. Eso permite cuidar la experiencia completa, desde los flujos principales hasta los pequeños detalles que hacen que un producto se sienta claro, confiable y bien construido."
     ],
     "portraitCaption": "Daniel Ramírez — Ingeniero informático, Colombia"
   },
   "capabilities": {
     "eyebrow": "Capacidades",
-    "title": "Para qué puedes contratarme.",
+    "title": "Lo que puedo construir contigo.",
     "groups": [
       {
-        "name": "Plataformas web y comercio electrónico",
-        "description": "Tiendas, pagos y toda la administración que va detrás — construidos alrededor de cómo vendes de verdad y no de lo que supone una plantilla.",
+        "name": "Plataformas y productos digitales",
+        "description": "Aplicaciones web, plataformas y experiencias digitales diseñadas alrededor de procesos reales, necesidades específicas y objetivos de negocio.",
         "stack": [
           "Next.js",
           "React",
@@ -39,8 +39,8 @@
         ]
       },
       {
-        "name": "Herramientas internas e intranets",
-        "description": "El software sin glamour en el que vive un equipo: inventario, pedidos, roles y permisos, reportes. Suele ser lo que más rendimiento le da a un negocio.",
+        "name": "Herramientas internas y operaciones",
+        "description": "Sistemas para organizar, automatizar y simplificar el trabajo diario: gestión, operaciones, datos, permisos, reportes y procesos internos.",
         "stack": [
           "Node.js",
           "MongoDB",
@@ -49,15 +49,16 @@
         ]
       },
       {
-        "name": "Interactivo y videojuegos",
-        "description": "Trabajo en Unity para productos donde la interacción es el punto — formación, simulación, accesibilidad, juego.",
+        "name": "IA y automatización",
+        "description": "Soluciones que conectan datos, procesos e inteligencia artificial para reducir trabajo manual, acelerar tareas y crear nuevas capacidades.",
         "stack": [
-          "Unity",
-          "C#"
+          "AI APIs",
+          "Python",
+          "Automation"
         ]
       }
     ],
-    "note": "Soy más fuerte en la parte de plataformas web, que es donde ha estado la mayor parte de mi trabajo. Si necesitas algo cercano, pregunta — prefiero decirte que no es mi terreno a aprenderlo con tu presupuesto."
+    "note": "Mi especialidad está en productos y plataformas web, aunque muchos proyectos se extienden naturalmente hacia áreas cercanas. Si el tuyo lo hace, lo revisamos con criterio y transparencia desde el inicio."
   },
   "studio": {
     "eyebrow": "Atomic Software Studio",
@@ -73,8 +74,8 @@
   },
   "contact": {
     "eyebrow": "Contacto",
-    "title": "Cuéntame qué estás construyendo.",
-    "body": "Si tienes un proceso que no encaja en un software de catálogo, o un producto que hay que construir bien, escríbeme. Cuéntame cuál es el problema y más o menos para cuándo lo necesitas, y te digo con franqueza si soy la persona indicada.",
+    "title": "Hablemos de lo que quieres construir.",
+    "body": "Si tu negocio necesita algo que las soluciones estándar no terminan de resolver, o tienes una idea que merece convertirse en un producto bien construido, cuéntame sobre ella.",
     "availability": "Disponible para nuevos proyectos",
     "copy": "Copiar dirección",
     "copied": "Copiado",
@@ -82,7 +83,7 @@
   },
   "work": {
     "eyebrow": "Proyectos",
-    "title": "Tres proyectos, y el razonamiento detrás de cada uno.",
+    "title": "Proyectos seleccionados y el enfoque detrás de cada uno.",
     "open": "Ver caso",
     "close": "Cerrar",
     "next": "Siguiente",
