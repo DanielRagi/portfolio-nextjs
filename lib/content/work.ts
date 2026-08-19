@@ -182,7 +182,40 @@ export async function getProject(locale: Locale, slug: string): Promise<Project 
   return (await getProjects(locale)).find((project) => project.slug === slug)
 }
 
-/** Every slug, for generateStaticParams in phase 04. */
+/** Every slug, for generateStaticParams. */
 export async function getProjectSlugs(): Promise<string[]> {
   return (await getProjects(i18n.defaultLocale)).map((project) => project.slug)
+}
+
+export type ProjectNeighbours = {
+  project: Project
+  prev: Project
+  next: Project
+  /** 1-based position in the collection, for the "01 / 05" indicator. */
+  position: number
+  total: number
+}
+
+/**
+ * A project plus its siblings. Wraps at both ends so the next-project link
+ * and the arrow keys never dead-end, and every count derives from the
+ * collection rather than being hardcoded.
+ */
+export async function getProjectNeighbours(
+  locale: Locale,
+  slug: string,
+): Promise<ProjectNeighbours | undefined> {
+  const projects = await getProjects(locale)
+  const index = projects.findIndex((project) => project.slug === slug)
+  if (index === -1) return undefined
+
+  const total = projects.length
+
+  return {
+    project: projects[index],
+    prev: projects[(index - 1 + total) % total],
+    next: projects[(index + 1) % total],
+    position: index + 1,
+    total,
+  }
 }

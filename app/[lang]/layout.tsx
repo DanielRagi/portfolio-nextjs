@@ -21,9 +21,12 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
+  modal,
   params,
 }: Readonly<{
   children: ReactNode
+  /** Parallel slot holding the intercepted case study overlay. */
+  modal: ReactNode
   params: Promise<{ lang: string }>
 }>) {
   const { lang } = await params
@@ -34,7 +37,10 @@ export default async function RootLayout({
     // without it, the global `scroll-behavior: smooth` also animates route
     // changes, which Next 16 no longer overrides on its own.
     <html lang={locale} className={fontVariables} data-scroll-behavior="smooth">
-      <body>{children}</body>
+      <body>
+        {children}
+        {modal}
+      </body>
     </html>
   )
 }

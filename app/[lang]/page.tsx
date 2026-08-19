@@ -1,5 +1,5 @@
 import Hero from "@/components/hero"
-import Projects from "@/components/projects"
+import WorkSection from "@/components/work/work-section"
 import Section from "@/components/section"
 import SiteFooter from "@/components/site-footer"
 import SiteNav from "@/components/site-nav"
@@ -25,9 +25,9 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
       <main id="main">
         <Hero dict={dict} />
 
-        {/* Phase 04 replaces this with the typographic work index and overlay. */}
+
         <Section id="work" eyebrow={dict.work.eyebrow} title={dict.work.title}>
-          <Projects lang={locale} dict={dict} />
+          <WorkSection lang={locale} dict={dict} />
         </Section>
       </main>
 

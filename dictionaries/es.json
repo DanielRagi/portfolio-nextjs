@@ -17,7 +17,23 @@
   "work": {
     "eyebrow": "Proyectos",
     "title": "Tres proyectos, y el razonamiento detrás de cada uno.",
-    "visit": "Visitar"
+    "visit": "Visitar",
+    "open": "Ver caso",
+    "close": "Cerrar",
+    "next": "Siguiente",
+    "prev": "Anterior",
+    "live": "Ver en vivo",
+    "source": "Código",
+    "role": "Rol",
+    "year": "Año",
+    "stack": "Tecnologías",
+    "status": "Estado",
+    "statusLive": "En línea",
+    "statusArchived": "Archivado",
+    "statusIn-progress": "En curso",
+    "archive": "Archivo",
+    "backToWork": "Volver a proyectos",
+    "keyboardHint": "Usa ← → para moverte entre proyectos"
   },
   "footer": {
     "text": "De 🇨🇴 para el mundo.",

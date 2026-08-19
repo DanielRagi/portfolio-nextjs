@@ -17,7 +17,23 @@
   "work": {
     "eyebrow": "Selected work",
     "title": "Three projects, and the thinking behind them.",
-    "visit": "Visit"
+    "visit": "Visit",
+    "open": "Read case study",
+    "close": "Close",
+    "next": "Next",
+    "prev": "Previous",
+    "live": "Visit live",
+    "source": "Source",
+    "role": "Role",
+    "year": "Year",
+    "stack": "Stack",
+    "status": "Status",
+    "statusLive": "Live",
+    "statusArchived": "Archived",
+    "statusIn-progress": "In progress",
+    "archive": "Archive",
+    "backToWork": "Back to work",
+    "keyboardHint": "Use ← → to move between projects"
   },
   "footer": {
     "text": "From 🇨🇴 to the world.",
