@@ -1,56 +1,59 @@
 import Image from "next/image"
+import { ArrowUpRight } from "lucide-react"
 import type { Project } from "@/lib/content/work"
 
+const STATUS_DOT: Record<Project["status"], string> = {
+  live: "bg-live",
+  archived: "bg-ink-dim",
+  "in-progress": "bg-accent",
+}
+
+/** Interim card, on-system. Replaced by the work index row in phase 04. */
 export default function ProjectCard({ project, visitText }: { project: Project; visitText: string }) {
   const { name, summary, stack, images, links, year, status } = project
 
   return (
-    <div className="bg-[#1e1e1e] border border-[#484747] rounded-lg overflow-hidden min-h-[344px] transition-all duration-300 ease-in-out hover:transform hover:scale-[1.02] hover:shadow-[0_0_15px_rgba(255,255,255,0.2)] hover:z-10">
-      <div className="relative h-48">
+    <article className="group flex h-full flex-col overflow-hidden rounded border border-line bg-surface transition-colors duration-ui ease-out-soft hover:border-ink-dim">
+      <div className="relative aspect-[16/10] border-b border-line">
         <Image
           src={images.hero}
-          alt={name}
+          alt=""
           fill
           sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-          style={{ objectFit: "cover" }}
+          className="object-cover opacity-80 transition-opacity duration-ui ease-out-soft group-hover:opacity-100"
         />
       </div>
-      <div className="p-4">
-        <div className="flex justify-between items-center mb-2">
-          <h3 className="text-xl font-semibold">{name}</h3>
-          {links.live && (
+
+      <div className="flex flex-1 flex-col gap-3 p-5">
+        <div className="flex items-baseline justify-between gap-3">
+          <h3 className="font-display text-h3 font-semibold text-ink">{name}</h3>
+          <span className="font-mono text-meta tabular-nums text-ink-dim">{year}</span>
+        </div>
+
+        <p className="flex-1 font-body text-sm text-ink-muted">{summary}</p>
+
+        <p className="font-mono text-meta text-steel">{stack.join(" · ")}</p>
+
+        <div className="mt-1 flex items-center justify-between gap-3 border-t border-line-soft pt-3">
+          <span className="inline-flex items-center gap-2 font-mono text-meta uppercase text-ink-dim">
+            <span className={`h-1.5 w-1.5 rounded-full ${STATUS_DOT[status]}`} aria-hidden="true" />
+            {status}
+          </span>
+
+          {links.live ? (
             <a
               href={links.live}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 py-1 text-sm rounded transition-colors border border-transparent"
-              style={{
-                backgroundImage: "linear-gradient(to right, #A2D0EE, #D4AAD8)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                borderImage: "linear-gradient(to right, #A2D0EE, #D4AAD8) 1",
-              }}
+              className="inline-flex items-center gap-1 font-mono text-meta uppercase text-accent transition-colors duration-micro ease-out-soft hover:text-ink"
             >
               {visitText}
+              <ArrowUpRight className="h-3 w-3" aria-hidden="true" />
+              <span className="sr-only">— {name}</span>
             </a>
-          )}
-        </div>
-        <p className="text-[#8a8a8a] text-xs mb-2">
-          {year} · {status}
-        </p>
-        <p className="text-[#8a8a8a] text-sm mb-4">{summary}</p>
-        <div className="flex flex-wrap gap-2">
-          {stack.map((tag) => (
-            <span
-              key={tag}
-              className="px-2 py-1 text-xs rounded text-[#1e1e1e]"
-              style={{ backgroundImage: "linear-gradient(to right, #A2D0EE, #D4AAD8)" }}
-            >
-              {tag}
-            </span>
-          ))}
+          ) : null}
         </div>
       </div>
-    </div>
+    </article>
   )
 }

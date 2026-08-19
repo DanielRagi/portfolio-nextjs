@@ -1,27 +1,30 @@
 {
-  "header": {
-    "home": "Inicio",
-    "projects": "Proyectos",
-    "atomic": "Atomic Software Studio"
+  "nav": {
+    "work": "Proyectos",
+    "studio": "Atomic Studio",
+    "skipToContent": "Saltar al contenido",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú"
   },
   "hero": {
-    "greeting": "Hello World.",
-    "intro": "Soy",
-    "name": "Daniel.",
-    "title": "Programador Full Stack | Ingeniero Informático",
-    "description": "Transformo ideas en código y código en impacto. Me gusta resolver problemas con soluciones lógicas e innovadoras. Actualmente programando en Universitas XXI."
+    "statement": "Software hecho para cómo funciona tu negocio de verdad.",
+    "support": "Diseño y construyo plataformas a medida — tiendas en línea, herramientas internas, productos interactivos — para empresas que necesitan más que una plantilla.",
+    "role": "Ingeniero full-stack",
+    "location": "Colombia",
+    "current": "Actualmente programando en Universitas XXI",
+    "scrollHint": "Proyectos"
   },
-  "projects": {
-    "title": "Proyectos",
+  "work": {
+    "eyebrow": "Proyectos",
+    "title": "Tres proyectos, y el razonamiento detrás de cada uno.",
     "visit": "Visitar"
   },
   "footer": {
-    "text": "From 🇨🇴 to the world."
-  },
-  "scroll": {
-    "text": "Proyectos"
+    "text": "De 🇨🇴 para el mundo.",
+    "name": "Daniel Ramírez Giraldo"
   },
   "language": {
+    "label": "Idioma",
     "es": "Español",
     "en": "English"
   }

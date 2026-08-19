@@ -1,33 +1,37 @@
-import Header from "@/components/header"
 import Hero from "@/components/hero"
 import Projects from "@/components/projects"
-import Footer from "@/components/footer"
-import ScrollIndicator from "@/components/scroll-indicator"
+import Section from "@/components/section"
+import SiteFooter from "@/components/site-footer"
+import SiteNav from "@/components/site-nav"
 import { getDictionary } from "@/lib/dictionary"
-import type { Locale } from "@/lib/i18n-config"
-import { i18n } from "@/lib/i18n-config"
+import { i18n, isLocale, type Locale } from "@/lib/i18n-config"
 
-export default async function Home({
-  params,
-}: {
-  params: Promise<{ lang: Locale }>
-}) {
-  // Esperar a que los parámetros estén disponibles
+export default async function Home({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params
-
-  // Asegurarse de que lang es una de las localizaciones válidas
-  const validLang = i18n.locales.includes(lang) ? lang : i18n.defaultLocale
-
-  const dict = await getDictionary(validLang)
+  const locale: Locale = isLocale(lang) ? lang : i18n.defaultLocale
+  const dict = await getDictionary(locale)
 
   return (
-    <div className="min-h-screen text-ink">
-      <Header lang={validLang} dict={dict} />
-      <Hero dict={dict} />
-      <Projects lang={validLang} dict={dict} />
-      <Footer dict={dict} />
-      <ScrollIndicator dict={dict} />
-    </div>
+    <>
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:border focus:border-accent focus:bg-surface-raised focus:px-4 focus:py-2 focus:font-mono focus:text-meta focus:uppercase focus:text-ink"
+      >
+        {dict.nav.skipToContent}
+      </a>
+
+      <SiteNav lang={locale} dict={dict} />
+
+      <main id="main">
+        <Hero dict={dict} />
+
+        {/* Phase 04 replaces this with the typographic work index and overlay. */}
+        <Section id="work" eyebrow={dict.work.eyebrow} title={dict.work.title}>
+          <Projects lang={locale} dict={dict} />
+        </Section>
+      </main>
+
+      <SiteFooter dict={dict} />
+    </>
   )
 }
-
