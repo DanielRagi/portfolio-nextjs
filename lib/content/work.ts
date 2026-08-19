@@ -15,9 +15,13 @@ const CONTENT_ROOT = path.join(process.cwd(), "content", "work")
 const PUBLIC_ROOT = path.join(process.cwd(), "public")
 const SLUG_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
 
-export type Project = ProjectMeta &
+/** A detail image with its alt text already resolved to one language. */
+export type ProjectDetailImage = { src: string; alt: string }
+
+export type Project = Omit<ProjectMeta, "images"> &
   ProjectFrontmatter & {
     slug: string
+    images: { hero: string; details: ProjectDetailImage[] }
     /** Raw MDX body. Compiled by the renderer, not here. */
     body: string
   }
@@ -44,7 +48,7 @@ async function fileExists(absolutePath: string) {
 
 /** Every image referenced must actually be on disk, or the card renders broken. */
 async function collectMissingAssets(slug: string, meta: ProjectMeta) {
-  const referenced = [meta.images.hero, ...meta.images.details]
+  const referenced = [meta.images.hero, ...meta.images.details.map((detail) => detail.src)]
   const missing: string[] = []
 
   for (const asset of referenced) {
@@ -124,7 +128,24 @@ async function loadAll(): Promise<Record<Locale, Project[]>> {
         continue
       }
 
-      const { data, content } = matter(source)
+      // matter() throws on malformed YAML before Zod ever sees the data, and
+      // the raw exception surfaces as an opaque stack trace against whichever
+      // route happened to load first. Catch it here so the message names the
+      // file. The usual cause is an unquoted value containing ": ".
+      let data: Record<string, unknown>
+      let content: string
+      try {
+        const parsed = matter(source)
+        data = parsed.data
+        content = parsed.content
+      } catch (error) {
+        const reason = error instanceof Error ? error.message.split("\n")[0] : String(error)
+        problems.push(
+          `${slug}/${locale}.mdx: frontmatter is not valid YAML — ${reason}. ` +
+            `A value containing ": " must be wrapped in quotes.`,
+        )
+        continue
+      }
 
       let frontmatter: ProjectFrontmatter
       try {
@@ -139,7 +160,20 @@ async function loadAll(): Promise<Record<Locale, Project[]>> {
         continue
       }
 
-      byLocale[locale].push({ ...meta, ...frontmatter, slug, body: content })
+      byLocale[locale].push({
+        ...meta,
+        ...frontmatter,
+        slug,
+        body: content,
+        // Collapse each detail's per-language alt down to this locale's string.
+        images: {
+          hero: meta.images.hero,
+          details: meta.images.details.map((detail) => ({
+            src: detail.src,
+            alt: detail.alt[locale],
+          })),
+        },
+      })
     }
   }
 

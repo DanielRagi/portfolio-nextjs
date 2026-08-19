@@ -2,13 +2,15 @@
   "year": 2023,
   "status": "live",
   "featured": true,
-  "order": 3,
-  "stack": ["Next.js"],
+  "order": 4,
+  "stack": [
+    "Next.js"
+  ],
   "links": {
     "live": "https://crudiverse.vercel.app/"
   },
   "images": {
-    "hero": "/projects/project_003_001.webp",
+    "hero": "/projects/crudiverse/hero.webp",
     "details": []
   }
 }

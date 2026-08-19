@@ -2,13 +2,32 @@
   "year": 2024,
   "status": "live",
   "featured": true,
-  "order": 1,
-  "stack": ["Unity", "C#", "Next.js"],
+  "order": 2,
+  "stack": [
+    "Unity",
+    "C#",
+    "Next.js"
+  ],
   "links": {
     "live": "https://cognitive-playroom.vercel.app/"
   },
   "images": {
-    "hero": "/projects/project_001_001.webp",
-    "details": []
+    "hero": "/projects/cognitive-playroom/hero.webp",
+    "details": [
+      {
+        "src": "/projects/cognitive-playroom/detail-01.webp",
+        "alt": {
+          "en": "DRAFT — describe what this screen shows.",
+          "es": "BORRADOR — describe qué muestra esta pantalla."
+        }
+      },
+      {
+        "src": "/projects/cognitive-playroom/detail-02.webp",
+        "alt": {
+          "en": "DRAFT — describe what this screen shows.",
+          "es": "BORRADOR — describe qué muestra esta pantalla."
+        }
+      }
+    ]
   }
 }

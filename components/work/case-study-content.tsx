@@ -71,13 +71,19 @@ export default function CaseStudyContent({
 
       {project.images.details.length > 0 ? (
         <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2">
-          {project.images.details.map((src) => (
-            <div
-              key={src}
+          {project.images.details.map((detail) => (
+            <figure
+              key={detail.src}
               className="relative aspect-[4/3] overflow-hidden rounded border border-line bg-surface"
             >
-              <Image src={src} alt="" fill sizes="(min-width: 640px) 24rem, 100vw" className="object-cover" />
-            </div>
+              <Image
+                src={detail.src}
+                alt={detail.alt}
+                fill
+                sizes="(min-width: 640px) 24rem, 100vw"
+                className="object-cover"
+              />
+            </figure>
           ))}
         </div>
       ) : null}

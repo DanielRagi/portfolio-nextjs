@@ -1,0 +1,29 @@
+{
+  "year": 2026,
+  "status": "live",
+  "featured": true,
+  "order": 1,
+  "stack": ["Next.js", "TypeScript", "Supabase", "Leaflet"],
+  "links": {
+    "live": "https://unacopio.co/"
+  },
+  "images": {
+    "hero": "/projects/unacopio/hero.webp",
+    "details": [
+      {
+        "src": "/projects/unacopio/detail-01.webp",
+        "alt": {
+          "en": "The map view: 28 collection points across Medellín, clustered by area, each pin opening what that point receives and a route in Google Maps or Waze.",
+          "es": "La vista de mapa: 28 puntos de acopio en Medellín, agrupados por zona, con cada pin abriendo qué recibe ese punto y la ruta en Google Maps o Waze."
+        }
+      },
+      {
+        "src": "/projects/unacopio/detail-02.webp",
+        "alt": {
+          "en": "The moderation panel, where every point is phoned and confirmed before it is published, and near-identical entries are flagged as possible duplicates.",
+          "es": "El panel de moderación, donde cada punto se llama y se confirma antes de publicarse, y las entradas casi idénticas se marcan como posibles duplicados."
+        }
+      }
+    ]
+  }
+}

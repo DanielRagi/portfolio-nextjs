@@ -1,4 +1,19 @@
 import { z } from "zod"
+import { i18n, type Locale } from "@/lib/i18n-config"
+
+/**
+ * A string that must exist in every supported language. Built from i18n.locales
+ * so adding a language makes the build demand the new translations rather than
+ * silently accepting the old ones.
+ */
+const localizedString = z
+  .object(
+    Object.fromEntries(i18n.locales.map((locale) => [locale, z.string().min(1)])) as Record<
+      Locale,
+      z.ZodString
+    >,
+  )
+  .strict()
 
 /**
  * The contract for a project. Everything here is enforced at build time —
@@ -49,7 +64,14 @@ export const projectMetaSchema = z
       .default({}),
     images: z.object({
       hero: assetPath,
-      details: z.array(assetPath).default([]),
+      /**
+       * Detail shots carry meaning — a flow, a specific screen — so each one
+       * needs alt text in every language. They used to render with alt="",
+       * which told a screen reader they were decorative.
+       */
+      details: z
+        .array(z.object({ src: assetPath, alt: localizedString }).strict())
+        .default([]),
     }),
   })
   .strict()

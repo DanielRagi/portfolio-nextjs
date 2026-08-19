@@ -2,13 +2,17 @@
   "year": 2023,
   "status": "live",
   "featured": true,
-  "order": 2,
-  "stack": ["Node.js", "MongoDB", "EJS"],
+  "order": 3,
+  "stack": [
+    "Node.js",
+    "MongoDB",
+    "EJS"
+  ],
   "links": {
     "live": "https://dushialimentos.co"
   },
   "images": {
-    "hero": "/projects/project_002_001.webp",
+    "hero": "/projects/dushi-platform/hero.webp",
     "details": []
   }
 }
