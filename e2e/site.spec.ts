@@ -16,14 +16,21 @@ test.describe("locale routing", () => {
   })
 
   test("the language switch preserves a deep link", async ({ page }) => {
-    await page.goto("/en/work/dushi-platform")
+    await page.goto("/en/work/unacopio")
 
-    await page.getByRole("button", { name: /language/i }).click()
+    // The trigger is server-rendered, so a click can land before React has
+    // hydrated and be swallowed. Retrying the open until the menu is actually
+    // visible removes that race instead of leaving the test intermittent.
+    await expect(async () => {
+      await page.getByRole("button", { name: /language/i }).click()
+      await expect(page.getByRole("menu")).toBeVisible({ timeout: 1000 })
+    }).toPass({ timeout: 15_000 })
+
     await page.getByRole("menuitem", { name: "Español" }).click()
 
     // The old switch replaced the first "/en" anywhere in the path; this
     // asserts only the leading segment moves.
-    await expect(page).toHaveURL(/\/es\/work\/dushi-platform$/)
+    await expect(page).toHaveURL(/\/es\/work\/unacopio$/)
   })
 
   test("serves a genuinely different translation of each case study", async ({ page }) => {

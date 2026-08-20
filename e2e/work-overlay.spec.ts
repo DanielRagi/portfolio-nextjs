@@ -6,8 +6,10 @@ import { expect, test } from "@playwright/test"
  * all only exist in a real browser.
  */
 
-const FIRST = "cognitive-playroom"
-const SECOND = "dushi-platform"
+// Two real slugs from the collection, in index order. The suite only needs
+// them to be distinct, so replacing one is enough when the collection changes.
+const FIRST = "unacopio"
+const SECOND = "cognitive-playroom"
 
 test.describe("case study overlay", () => {
   test("opens over the index, keeping the index mounted behind it", async ({ page }) => {
