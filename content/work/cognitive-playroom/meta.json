@@ -17,15 +17,15 @@
       {
         "src": "/projects/cognitive-playroom/detail-01.webp",
         "alt": {
-          "en": "DRAFT — describe what this screen shows.",
-          "es": "BORRADOR — describe qué muestra esta pantalla."
+          "en": "The videogame preview running in the browser, showing a 3D environment with a character and interactive elements.",
+          "es": "La vista previa del videojuego ejecutándose en el navegador, mostrando un entorno 3D con un personaje y elementos interactivos."
         }
       },
       {
         "src": "/projects/cognitive-playroom/detail-02.webp",
         "alt": {
-          "en": "DRAFT — describe what this screen shows.",
-          "es": "BORRADOR — describe qué muestra esta pantalla."
+          "en": "The 'about' section of the website describing the project.",
+          "es": "La sección 'acerca de' del sitio web que describe el proyecto."
         }
       }
     ]
