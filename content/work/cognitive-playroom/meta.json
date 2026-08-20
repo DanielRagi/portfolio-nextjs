@@ -1,0 +1,33 @@
+{
+  "year": 2024,
+  "status": "live",
+  "featured": true,
+  "order": 2,
+  "stack": [
+    "Unity",
+    "C#",
+    "Next.js"
+  ],
+  "links": {
+    "live": "https://cognitive-playroom.vercel.app/"
+  },
+  "images": {
+    "hero": "/projects/cognitive-playroom/hero.webp",
+    "details": [
+      {
+        "src": "/projects/cognitive-playroom/detail-01.webp",
+        "alt": {
+          "en": "The videogame preview running in the browser, showing a 3D environment with a character and interactive elements.",
+          "es": "La vista previa del videojuego ejecutándose en el navegador, mostrando un entorno 3D con un personaje y elementos interactivos."
+        }
+      },
+      {
+        "src": "/projects/cognitive-playroom/detail-02.webp",
+        "alt": {
+          "en": "The 'about' section of the website describing the project.",
+          "es": "La sección 'acerca de' del sitio web que describe el proyecto."
+        }
+      }
+    ]
+  }
+}

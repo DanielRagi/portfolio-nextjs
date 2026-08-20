@@ -1,43 +1,112 @@
 {
-  "header": {
-    "home": "Inicio",
-    "projects": "Proyectos",
-    "atomic": "Atomic Software Studio"
+  "nav": {
+    "approach": "Método",
+    "work": "Proyectos",
+    "contact": "Contacto",
+    "studio": "Atomic Studio",
+    "skipToContent": "Saltar al contenido"
   },
   "hero": {
-    "greeting": "Hello World.",
-    "intro": "Soy",
-    "name": "Daniel.",
-    "title": "Programador Full Stack | Ingeniero Informático",
-    "description": "Transformo ideas en código y código en impacto. Me gusta resolver problemas con soluciones lógicas e innovadoras. Actualmente programando en Universitas XXI."
+    "statement": "Software diseñado para cómo funciona realmente tu negocio.",
+    "support": "Creo experiencias y productos digitales a medida para resolver necesidades reales, simplificar procesos y hacer crecer nuevas ideas.",
+    "role": "Ingeniero full-stack",
+    "location": "Colombia",
+    "current": "Actualmente programando en Universitas XXI"
   },
-  "projects": {
-    "title": "Proyectos",
-    "visit": "Visitar",
-    "items": [
+  "approach": {
+    "eyebrow": "Método",
+    "title": "Cómo trabajo.",
+    "paragraphs": [
+      "Cada proyecto comienza entendiendo el problema antes de decidir cómo resolverlo. Más allá del producto que se quiere construir, busco entender cómo funciona realmente el negocio, dónde existe fricción, qué está dificultando el proceso actual y qué cambio podría generar un impacto significativo. La idea es comprender la necesidad real antes de convertirla en funcionalidades.",
+      "A partir de ahí, diseño alrededor de las personas que van a usar la solución. Su contexto, prioridades, hábitos y expectativas guían las decisiones de producto mucho más que cualquier tecnología específica. Entender cómo encaja el producto en su día a día ayuda a mantener la experiencia útil, intuitiva y enfocada.",
+      "Trabajo con alcances deliberados: menos funcionalidades, mejor resueltas. Eso crea espacio para cuidar toda la experiencia, desde los flujos principales hasta los pequeños detalles que hacen que un producto se sienta claro, confiable y bien construido. El resultado no debería limitarse a funcionar: debería sentirse coherente, intencional y fácil de usar."
+    ],
+    "portraitCaption": "Daniel Ramírez — Ingeniero Informático, Colombia"
+  },
+  "capabilities": {
+    "eyebrow": "Capacidades",
+    "title": "Lo que puedo construir contigo.",
+    "groups": [
       {
-        "name": "Cognitive Playroom",
-        "desc": "Videojuego para la estimulación cognitiva de personas con enfermedad de Alzheimer."
+        "name": "Plataformas y productos digitales",
+        "description": "Aplicaciones web, plataformas y experiencias digitales diseñadas alrededor de procesos reales, necesidades específicas y objetivos de negocio.",
+        "stack": [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Node.js",
+          "MongoDB"
+        ]
       },
       {
-        "name": "Crudiverse",
-        "desc": "Una guía para crear e integrar APIs CRUD con diversas tecnologías backend y frontend."
+        "name": "Herramientas internas y operaciones",
+        "description": "Sistemas para organizar, automatizar y simplificar el trabajo diario: gestión, operaciones, datos, permisos, reportes y procesos internos.",
+        "stack": [
+          "Node.js",
+          "MongoDB",
+          "EJS",
+          "Next.js"
+        ]
       },
       {
-        "name": "Dushi Platform",
-        "desc": "E-commerce, administración e intranet a medida para empresa de alimentos saludables."
+        "name": "IA y automatización",
+        "description": "Soluciones que conectan datos, procesos e inteligencia artificial para reducir trabajo manual, acelerar tareas y crear nuevas capacidades.",
+        "stack": [
+          "AI APIs",
+          "Python",
+          "Automation"
+        ]
       }
-    ]
+    ],
+    "note": "Mi especialidad está en productos y plataformas web, aunque muchos proyectos se extienden naturalmente hacia áreas cercanas. Si el tuyo lo hace, lo revisamos con criterio y transparencia desde el inicio."
+  },
+  "studio": {
+    "eyebrow": "Atomic Software Studio",
+    "title": "Para el trabajo que necesita equipo.",
+    "body": "Además de mis propios proyectos, construyo con Atomic Software Studio, que se dedica a sistemas inteligentes y automatizados para empresas. Cuando un proyecto necesita más manos que las mías, va para allá.",
+    "services": [
+      "Chatbots con IA y automatización",
+      "Desarrollo web",
+      "Integraciones y APIs",
+      "Soluciones en la nube"
+    ],
+    "cta": "Visitar el estudio"
+  },
+  "contact": {
+    "eyebrow": "Contacto",
+    "title": "Hablemos de lo que quieres construir.",
+    "body": "Si tu negocio necesita algo que las soluciones estándar no terminan de resolver, o tienes una idea que merece convertirse en un producto bien construido, cuéntame sobre ella.",
+    "availability": "Disponible para nuevos proyectos",
+    "copy": "Copiar dirección",
+    "copied": "Copiado",
+    "elsewhere": "En otros lugares"
+  },
+  "work": {
+    "eyebrow": "Proyectos",
+    "title": "Proyectos seleccionados y el enfoque detrás de cada uno.",
+    "open": "Ver caso",
+    "close": "Cerrar",
+    "next": "Siguiente",
+    "live": "Ver en vivo",
+    "source": "Código",
+    "role": "Rol",
+    "year": "Año",
+    "stack": "Tecnologías",
+    "status": "Estado",
+    "statusLive": "En línea",
+    "statusArchived": "Archivado",
+    "statusIn-progress": "En curso",
+    "archive": "Archivo",
+    "backToWork": "Volver a proyectos",
+    "keyboardHint": "Usa ← → para moverte entre proyectos"
   },
   "footer": {
-    "text": "From 🇨🇴 to the world."
-  },
-  "scroll": {
-    "text": "Proyectos"
+    "text": "De 🇨🇴 para el mundo.",
+    "name": "Daniel Ramírez Giraldo"
   },
   "language": {
+    "label": "Idioma",
     "es": "Español",
     "en": "English"
   }
 }
-

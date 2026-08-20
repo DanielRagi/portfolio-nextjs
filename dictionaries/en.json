@@ -1,43 +1,112 @@
 {
-  "header": {
-    "home": "Home",
-    "projects": "Projects",
-    "atomic": "Atomic Software Studio"
+  "nav": {
+    "approach": "Approach",
+    "work": "Work",
+    "contact": "Contact",
+    "studio": "Atomic Studio",
+    "skipToContent": "Skip to content"
   },
   "hero": {
-    "greeting": "Hello World.",
-    "intro": "I'm",
-    "name": "Daniel.",
-    "title": "Full Stack Developer | Computer Engineer",
-    "description": "I transform ideas into code and code into impact. I enjoy solving problems with logical and innovative solutions. Currently coding at Universitas XXI."
+    "statement": "Software built for how your business actually works.",
+    "support": "I build tailored digital products and experiences to solve real needs, simplify processes, and grow new ideas.",
+    "role": "Full-stack engineer",
+    "location": "Colombia",
+    "current": "Currently engineering at Universitas XXI"
   },
-  "projects": {
-    "title": "Projects",
-    "visit": "Visit",
-    "items": [
+  "approach": {
+    "eyebrow": "Approach",
+    "title": "How I work.",
+    "paragraphs": [
+      "Every project starts by understanding the problem before choosing how to solve it. Beyond the product being requested, I look at how the business actually works, where friction exists, what is getting in the way today, and what change would create meaningful impact. The goal is to understand the real need before turning it into features.",
+      "From there, I design around the people who will use the solution. Their context, priorities, habits, and expectations guide product decisions far more than any specific technology. Understanding how the product fits into their day-to-day work helps keep the experience useful, intuitive, and focused.",
+      "I work with deliberate scope: fewer features, better resolved. That creates room to refine the entire experience, from core flows to the small details that make a product feel clear, reliable, and thoughtfully built. The result should not just work — it should feel coherent, intentional, and easy to trust."
+    ],
+    "portraitCaption": "Daniel Ramírez — Computer Engineer, Colombia"
+  },
+  "capabilities": {
+    "eyebrow": "Capabilities",
+    "title": "What I can build with you.",
+    "groups": [
       {
-        "name": "Cognitive Playroom",
-        "desc": "Video game for cognitive stimulation of people with Alzheimer's disease."
+        "name": "Digital platforms and products",
+        "description": "Web applications, platforms, and digital experiences designed around real processes, specific needs, and business goals.",
+        "stack": [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Node.js",
+          "MongoDB"
+        ]
       },
       {
-        "name": "Crudiverse",
-        "desc": "A guide to building and integrating CRUD APIs with backend and frontend technologies."
+        "name": "Internal tools and operations",
+        "description": "Systems that organize, automate, and simplify everyday work: management, operations, data, permissions, reporting, and internal workflows.",
+        "stack": [
+          "Node.js",
+          "MongoDB",
+          "EJS",
+          "Next.js"
+        ]
       },
       {
-        "name": "Dushi Platform",
-        "desc": "Custom e-commerce, administration, and intranet for a healthy food company."
+        "name": "AI and automation",
+        "description": "Solutions that connect data, workflows, and artificial intelligence to reduce manual work, accelerate tasks, and unlock new capabilities.",
+        "stack": [
+          "AI APIs",
+          "Python",
+          "Automation"
+        ]
       }
-    ]
+    ],
+    "note": "My core expertise is in web products and platforms, though many projects naturally extend into adjacent areas. If yours does, we can evaluate it with clarity and transparency from the start."
+  },
+  "studio": {
+    "eyebrow": "Atomic Software Studio",
+    "title": "For work that needs a team.",
+    "body": "Alongside my own projects I build with Atomic Software Studio, which takes on intelligent and automated systems for businesses. When a project needs more hands than mine, it goes there.",
+    "services": [
+      "AI chatbots and automation",
+      "Web development",
+      "Integrations and APIs",
+      "Cloud solutions"
+    ],
+    "cta": "Visit the studio"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Let's talk about what you're building.",
+    "body": "If your business needs something off-the-shelf solutions cannot quite solve, or you have an idea worth turning into a well-built product, tell me about it.",
+    "availability": "Available for new projects",
+    "copy": "Copy address",
+    "copied": "Copied",
+    "elsewhere": "Elsewhere"
+  },
+  "work": {
+    "eyebrow": "Selected work",
+    "title": "Selected projects, and the thinking behind each one.",
+    "open": "Read case study",
+    "close": "Close",
+    "next": "Next",
+    "live": "Visit live",
+    "source": "Source",
+    "role": "Role",
+    "year": "Year",
+    "stack": "Stack",
+    "status": "Status",
+    "statusLive": "Live",
+    "statusArchived": "Archived",
+    "statusIn-progress": "In progress",
+    "archive": "Archive",
+    "backToWork": "Back to work",
+    "keyboardHint": "Use ← → to move between projects"
   },
   "footer": {
-    "text": "From 🇨🇴 to the world."
-  },
-  "scroll": {
-    "text": "Projects"
+    "text": "From 🇨🇴 to the world.",
+    "name": "Daniel Ramírez Giraldo"
   },
   "language": {
+    "label": "Language",
     "es": "Español",
     "en": "English"
   }
 }
-

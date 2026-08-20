@@ -1,69 +1,84 @@
-"use client"
-
 import Image from "next/image"
-import { Github, Linkedin, ExternalLink } from "lucide-react"
-import AnimatedSection from "./animated-section"
+import { Github, Linkedin } from "lucide-react"
+import type { Dictionary } from "@/lib/dictionary-types"
+import { site } from "@/lib/site"
+import { Sequence, Step } from "./motion"
 
-export default function Hero({ dict }: { dict: any }) {
+/**
+ * The statement leads; the job title is demoted to the mono meta line, where
+ * a recruiter can still find it and a client does not have to read it first.
+ *
+ * The circular greyscale avatar is gone — the portrait returns in the Approach
+ * section (phase 05), at a size where it supports rather than decorates.
+ */
+
+const LINKS = [
+  { href: site.links.linkedin, label: "LinkedIn", Icon: Linkedin },
+  { href: site.links.github, label: "GitHub", Icon: Github },
+]
+
+export default function Hero({ dict }: { dict: Dictionary }) {
   return (
-    <section className="container mx-auto px-4 min-h-[calc(100vh-80px)] flex flex-col md:flex-row items-center justify-center">
-      <AnimatedSection className="md:w-1/3 mb-10 md:mb-0" delay={0.1}>
-        <h1 className="text-5xl md:text-6xl font-bold mb-2">{dict.hero.greeting}</h1>
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          {dict.hero.intro}{" "}
-          <span
-            className="text-transparent bg-clip-text inline-block"
-            style={{
-              backgroundImage: "linear-gradient(to right, #A2D0EE, #D4AAD8)",
-            }}
-          >
-            {dict.hero.name}
-          </span>
-        </h2>
-        <p className="text-[#8a8a8a] mb-2">{dict.hero.title}</p>
-        <p className="text-[#8a8a8a] mb-6 max-w-lg">{dict.hero.description}</p>
-        <div className="flex space-x-4">
-          <a
-            href="https://www.linkedin.com/in/danielramg/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-[#ffda44] transition-colors"
-          >
-            <Linkedin size={24} />
-            <span className="sr-only">LinkedIn</span>
-          </a>
-          <a
-            href="https://github.com/DanielRagi"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-[#ffda44] transition-colors"
-          >
-            <Github size={24} />
-            <span className="sr-only">GitHub</span>
-          </a>
-          <a
-            href="https://www.fiverr.com/s/R7KqEPx"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-[#ffda44] transition-colors"
-          >
-            <Image src="/fiverr.png" alt="Fiverr" width={24} height={24} />
-            <span className="sr-only">Fiverr</span>
-          </a>
-        </div>
-      </AnimatedSection>
-      <AnimatedSection className="md:w-1/3" delay={0.3}>
-        <div className="rounded-full overflow-hidden w-64 h-64 mx-auto group">
-          <Image
-            src="/profile.webp?height=256&width=256"
-            alt="Daniel Ramírez"
-            width={256}
-            height={256}
-            className="object-cover transition-all duration-300 filter grayscale group-hover:grayscale-0"
-          />
-        </div>
-      </AnimatedSection>
+    <section className="relative flex min-h-[92svh] items-center overflow-hidden">
+      {/* The single ambient light source on the page. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10"
+        style={{
+          background:
+            "radial-gradient(60rem 40rem at 78% -10%, rgb(var(--steel) / 0.06), transparent 62%), radial-gradient(48rem 34rem at 6% 8%, rgb(var(--accent) / 0.04), transparent 60%)",
+        }}
+      />
+
+      <Sequence className="mx-auto w-full max-w-shell px-gutter pb-20 pt-32" delay={0.1}>
+        <Step>
+          <p className="label">
+            {dict.hero.role} <span className="text-line">/</span> {dict.hero.location}
+          </p>
+        </Step>
+
+        <Step>
+          <h1 className="mt-6 max-w-[16ch] text-display font-display font-bold text-ink">
+            {dict.hero.statement}
+          </h1>
+        </Step>
+
+        <Step>
+          <p className="mt-8 max-w-measure font-body text-lead font-light text-ink-muted">
+            {dict.hero.support}
+          </p>
+        </Step>
+
+        <Step>
+          <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4">
+            <p className="font-mono text-meta uppercase text-ink-dim">{dict.hero.current}</p>
+
+            <div className="flex items-center gap-4">
+              {LINKS.map(({ href, label, Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-ink-dim transition-colors duration-micro ease-out-soft hover:text-accent"
+                >
+                  <Icon className="h-[18px] w-[18px]" aria-hidden="true" />
+                  <span className="sr-only">{label}</span>
+                </a>
+              ))}
+              <a
+                href={site.links.fiverr}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="opacity-60 transition-opacity duration-micro ease-out-soft hover:opacity-100"
+              >
+                <Image src="/fiverr.png" alt="" width={18} height={18} aria-hidden="true" />
+                <span className="sr-only">Fiverr</span>
+              </a>
+            </div>
+          </div>
+        </Step>
+      </Sequence>
     </section>
   )
 }
-
